@@ -6,7 +6,7 @@ angular
     $scope.UserLogIn = () =>{
         AuthFactory.googleLogin()
         .then((user)=>{
-            $window.location.href = '#!/ScoreCard';
+            $window.location.href = '#!/NewScoreCard';
         });
     };
 });
