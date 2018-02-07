@@ -1,0 +1,10 @@
+.scoreCardList {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+}
+.scoreCardCard {
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    border: 5px solid black;
+}

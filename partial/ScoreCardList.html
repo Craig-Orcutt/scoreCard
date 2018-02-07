@@ -1,10 +1,10 @@
 <div class="form-group">
 <label >Pick a Course</label>
 
-    <label class="checkbox-inline">GC #1</label>
-        <input type="checkbox" name='golfCourse' value='1' ng-true-value='1' ng-false-value='' ng-model="ScoreCard.GCID">
+    <label class="checkbox-inline">Hermitage Golf Course</label>
+        <input type="checkbox" name='golfCourse' value="1" ng-true-value="1" ng-false-value='' ng-model="ScoreCard.GCID">
 
-    <label class="checkbox-inline">GC2{{ScoreCard.GCID}}</label>
+    <label class="checkbox-inline">The Ledges</label>
         <input type="checkbox" name='golfCourse' value="2" ng-true-value='2' ng-false-value=''ng-model="ScoreCard.GCID">
 </div>
 <label>Pick A Date</label>
@@ -12,11 +12,15 @@
 
 <button ng-click="CreateScoreCard()">Add A New ScoreCard</button>
 
-
-<div class="scoreCardList" ng-repeat="ScoreCard in ScoreCards">
+<div class="scoreCardList">
+<div ng-repeat="ScoreCard in ScoreCards">
     <button class'deleteScoreCardBtn' ng-click="deleteScoreCard(ScoreCard.id)">
         DELETE
     </button>
-    <p class="scoreCardDate">{{ScoreCard.date}}</p>
-    <p class="scoreCardCourse">{{ScoreCard.GCID}}</p>
+    <div class='scoreCardCard'ng-click='goToScoreCard(ScoreCard.id)'>
+        <p class="scoreCardDate">Date:{{ScoreCard.date}}</p>
+
+        <p class='scoreCardCourseName'>Course:{{ScoreCard.CourseName}}</p>
+    </div>
+</div>
 </div>

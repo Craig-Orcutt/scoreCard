@@ -7,11 +7,9 @@ angular
     function getCourseData() {
         return $q((resolve, reject)=>{
             $http
-            .get(`${FBUrl}courseInfo.json`)
+            .get(`${FBUrl}golfCourse.json`)
             .then((data)=>{
-                console.log('data',data );
-                
-                resolve(data);
+                resolve(data.data[0]);
             })
             .catch((err)=>{
                 reject(err);
@@ -19,5 +17,18 @@ angular
         });
     }
 
+    // function getGolfCourse(scoreCardGCID) {
+    //     return $q((resolve, reject) => {
+    //         $http
+    //             .get(`${FBUrl}golfCourse/${scoreCardGCID}`)
+    //             .then(({ data }) => {
+    //                 let scoreCardArr = Object.keys(data).map(cardKey => {
+    //                     data[cardKey].id = cardKey;
+    //                     return data[cardKey];
+    //                 });
+    //                 resolve(scoreCardArr);
+    //             });
+    //     });
+    // }
 return { getCourseData };
 });
