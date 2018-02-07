@@ -13,7 +13,7 @@ let isLoggedIn = (AuthFactory) => {
                 reject();
             }
         });
-    });
+    }); 
 };
 angular.module("score", ["ngRoute"])
     .constant("FBUrl", "https://scorecard-2a336.firebaseio.com/")
