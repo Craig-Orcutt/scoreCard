@@ -33,6 +33,11 @@ angular.module("score", ["ngRoute"])
                 controller: 'ScoreCard',
                 resolve: { isLoggedIn }
             })
+            .when('/NewScoreCard',{
+                templateUrl: 'partial/NewScoreCard.html',
+                controller: 'NewScoreCardCtrl',
+                resolve: { isLoggedIn }
+            })
             .otherwise('/home');
     })
 

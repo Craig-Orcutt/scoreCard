@@ -1,2 +1,9 @@
 
 
+<div class="scoreCardList" ng-repeat="ScoreCards in ScoreCards">
+    <button class'deleteScoreCardBtn' ng-click="deleteScoreCard(ScoreCard.id)">
+        DELETE
+    </button>
+    <p class="scoreCardDate">{{ScoreCards.date}}</p>
+    <p class="scoreCardCourse">{{ScoreCards.course}}</p>
+</div>

@@ -3,21 +3,46 @@
 angular
 .module('score')
 .factory('ScoreCardFactory', function (FBUrl , $q , $http){
-
-    function getCourseData() {
-        return $q((resolve, reject)=>{
+    
+    function addNewScoreCard(scoreCardTitle) {
+        return $q((resolve,reject)=>{
             $http
-            .get(`${FBUrl}courseInfo.json`)
-            .then((data)=>{
-                console.log('data',data );
-                
-                resolve(data);
+            .post(`${FBUrl}scoreCards.json`, JSON.stringify(scoreCardTitle))
+            .then( data => {
+                console.log('new scorecard Added', data.data );
+                resolve(data.data);
+            });
+        });
+    }
+
+    function getScoreCardList(scoreCardID) {
+        return $q((resolve , reject)=>{
+            $http
+            .get(`${FBUrl}scoreCards.json?orderBy="uid"&equalTo="${scoreCardID}"`)
+            .then(({data})=>{
+                let scoreCardArr = Object.keys(data).map(cardKey =>{
+                    data[cardKey].id = cardKey;
+                    console.log('scoreCard ID', data[cardKey].id );
+                    return data[cardKey];
+                });
+                resolve(scoreCardArr);
+            });
+        });
+    }
+
+    function deleteScoreCard(scoreCardID) {
+        return $q ((resolve , reject) =>{
+            $http
+            .delete(`${FBUrl}scoreCards/${scoreCardID}.json`)
+            .then(() =>{
+                resolve();
             })
-            .catch((err)=>{
+            .catch (err =>{
                 reject(err);
             });
         });
     }
 
-return { getCourseData };
+
+return { addNewScoreCard , getScoreCardList , deleteScoreCard };
 });
