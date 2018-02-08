@@ -9,7 +9,7 @@ angular
             $http
             .get(`${FBUrl}golfCourse.json`)
             .then((data)=>{
-                resolve(data.data[0]);
+                resolve(data);
             })
             .catch((err)=>{
                 reject(err);
@@ -17,6 +17,16 @@ angular
         });
     }
 
+    function getHoleData() {
+        return $q ((resolve, reject)=>{
+            $http
+            .get(`${FBUrl}holes.json`)
+            .then(({data})=>{
+                console.log('holes', data);
+            resolve(data);
+            });
+        });
+    }
     // function getGolfCourse(scoreCardGCID) {
     //     return $q((resolve, reject) => {
     //         $http
@@ -30,5 +40,5 @@ angular
     //             });
     //     });
     // }
-return { getCourseData };
+return { getCourseData , getHoleData };
 });

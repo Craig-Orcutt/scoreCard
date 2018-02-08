@@ -3,8 +3,50 @@
     grid-template-columns: repeat(3,1fr);
     grid-gap: 10px;
 }
-.scoreCardCard {
+.scoreCardListCard {
     display: grid;
     grid-template-rows: repeat(3,1fr);
     border: 5px solid black;
+}
+
+.scoreCardContainer{
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    // grid-template-columns: repeat(18,1fr);
+}
+.holeLabel{
+    grid-row: 1;
+}
+
+.holeNumber {
+    grid-row: 1;
+    border: 1px solid black;
+    text-align: center;
+
+}
+.yardsLabel {
+    grid-row: 2
+}
+.holeYards {
+    grid-row: 2;
+    border: 1px solid blue;
+    text-align: center;
+}
+.parLabel {
+    grid-row: 3;
+}
+.holePar{
+    grid-row: 3;
+    border: 1px solid green;
+    text-align: center;
+
+}
+.scoreLabel{
+    grid-row: 4;
+}
+.holeScore{
+    grid-row: 4;
+}
+.scoreInput{
+    width: 50px;
 }

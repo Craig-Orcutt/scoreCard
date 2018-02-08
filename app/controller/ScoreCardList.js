@@ -5,13 +5,12 @@ angular
     .controller('ScoreCardList', function ($scope, $route, ScoreCardFactory, $location, AuthFactory, GolfCourseFactory) {
         $scope.ScoreCard = {
             date: '',
-            GCID: '',
-            CourseName: ''
+            GCID: ''
         };
 
         GolfCourseFactory.getCourseData()
         .then((data)=>{
-            $scope.ScoreCard.CourseName = data.data[0].name;
+            $scope.ScoreCard.GCID = data.data[0].name;
         });
 
         $scope.CreateScoreCard = () => {
@@ -32,12 +31,6 @@ angular
                         console.log('scorecards', data);
                         $scope.ScoreCards = data;
                     });
-                    // .then(()=>{
-                    //     GolfCourseFactory.getCourseData()
-                    //     .then((data)=>{
-                    //         console.log('course name', data.data.name);
-                    //     });
-                    // });
             } else {
                 console.log('err');
             }
