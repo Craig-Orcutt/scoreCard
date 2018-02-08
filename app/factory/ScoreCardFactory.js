@@ -4,10 +4,10 @@ angular
     .module('score')
     .factory('ScoreCardFactory', function (FBUrl, $q, $http) {
 
-        function addNewScoreCard(scoreCardTitle) {
+        function addNewScoreCard(scoreCardObj) {
             return $q((resolve, reject) => {
                 $http
-                    .post(`${FBUrl}scoreCards.json`, JSON.stringify(scoreCardTitle))
+                    .post(`${FBUrl}scoreCards.json`, JSON.stringify(scoreCardObj))
                     .then(data => {
                         console.log('new scorecard Added', data.data);
                         resolve(data.data);

@@ -1,4 +1,4 @@
-app/values/FBCreds
+app/values/FBCreds.js
 node_modules
 dist/project.js
 .sass-cache

@@ -4,12 +4,31 @@ angular
 .module('score')
 .factory('GolfCourseFactory', function (FBUrl , $q , $http){
 
-    function getCourseData() {
+    function getAllCourseData() {
         return $q((resolve, reject)=>{
             $http
             .get(`${FBUrl}golfCourse.json`)
             .then((data)=>{
+                console.log('courses', data);
+                
                 resolve(data);
+            })
+            .catch((err)=>{
+                reject(err);
+            });
+        });
+    }
+
+    function getSingleCourseSelect(name) {
+        return $q((resolve, reject)=>{
+            $http
+            .get(`${FBUrl}golfCourse.json?orderBy="name"&equalTo="${name}"`)
+            .then(({data})=>{
+                let courseArr = Object.keys(data).map(courseKey => {
+                    data[courseKey].id = courseKey;
+                    return data[courseKey];
+                });
+                resolve(courseArr);
             })
             .catch((err)=>{
                 reject(err);
@@ -27,6 +46,10 @@ angular
             });
         });
     }
+
+
+
+
     // function getGolfCourse(scoreCardGCID) {
     //     return $q((resolve, reject) => {
     //         $http
@@ -40,5 +63,5 @@ angular
     //             });
     //     });
     // }
-return { getCourseData , getHoleData };
+return { getAllCourseData , getHoleData, getSingleCourseSelect };
 });
