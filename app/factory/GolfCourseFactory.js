@@ -23,10 +23,12 @@ angular
         return $q((resolve, reject)=>{
             $http
             .get(`${FBUrl}golfCourse.json?orderBy="name"&equalTo="${name}"`)
-            .then((data)=>{
-                console.log('Signlecourses', data);
-                
-                resolve(data);
+            .then(({data})=>{
+                let courseArr = Object.keys(data).map(courseKey => {
+                    data[courseKey].id = courseKey;
+                    return data[courseKey];
+                });
+                resolve(courseArr);
             })
             .catch((err)=>{
                 reject(err);
