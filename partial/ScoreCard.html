@@ -1,0 +1,23 @@
+<div class= 'scoreCardContainer'>
+
+        <p class="holeLabel">Hole</p>
+        <div class='holeNumber'ng-repeat="hole in HoleInfo">
+            <p>{{hole.holeNumber}}</p>
+        </div>
+
+        <p class="yardsLabel">Yards</p>
+        <div class='holeYards'ng-repeat="hole in HoleInfo">
+            <p>{{hole.yards}}</p>
+        </div>
+
+
+        <p class="parLabel">Par</p>
+        <div class='holePar'ng-repeat="hole in HoleInfo">
+            <p class='{{hole.par}}'>{{hole.par}}</p>
+        </div>
+        <p class="scoreLabel">Score</p>
+        <div class='holeScore'ng-repeat="hole in HoleInfo">
+            <input class="scoreInput {{hole.holeNumber}}" type="text">
+        </div>
+        
+</div>

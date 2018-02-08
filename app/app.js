@@ -28,16 +28,17 @@ angular.module("score", ["ngRoute"])
                 controller: 'ScoreCardList',
                 resolve: { isLoggedIn }
             })
-            .when('/ScoreCard', {
-                templateUrl: 'partial/ScoreCard.html',
-                controller: 'ScoreCard',
-                resolve: { isLoggedIn }
-            })
             .when('/NewScoreCard',{
                 templateUrl: 'partial/NewScoreCard.html',
                 controller: 'NewScoreCardCtrl',
                 resolve: { isLoggedIn }
             })
+            .when('/ScoreCard/:id', {
+                templateUrl: 'partial/ScoreCard.html',
+                controller: 'ScoreCard',
+                resolve: { isLoggedIn }
+        
+              })
             .otherwise('/home');
     })
 
