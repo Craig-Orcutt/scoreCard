@@ -36,10 +36,12 @@ angular
         });
     }
 
-    function getHoleData() {
+    function getHoleData(courseID) {
         return $q ((resolve, reject)=>{
+            console.log('courseid', courseID);
+
             $http
-            .get(`${FBUrl}holes.json`)
+            .get(`${FBUrl}holes.json?orderBy="GCID"&equalTo=${courseID}`)
             .then(({data})=>{
                 console.log('holes', data);
             resolve(data);

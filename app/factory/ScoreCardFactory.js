@@ -42,6 +42,17 @@ angular
             });
         }
 
-
-        return { addNewScoreCard, getScoreCardList, deleteScoreCard };
+        function getSingleScoreCard(scoreCardID) {
+            return $q((resolve, reject) => {
+                $http
+                    .get(`${FBUrl}scoreCards/${scoreCardID}.json`)
+                    .then((data) => {
+                        resolve(data);
+                    })
+                    .catch(err => {
+                        reject(err);
+                    });
+            });
+        }
+        return { addNewScoreCard, getScoreCardList, deleteScoreCard, getSingleScoreCard };
     });
