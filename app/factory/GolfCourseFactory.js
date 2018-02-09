@@ -38,7 +38,7 @@ angular
 
     function getHoleData(courseID) {
         return $q ((resolve, reject)=>{
-            console.log('courseid', courseID);
+            // console.log('courseid', courseID);
 
             $http
             .get(`${FBUrl}holes.json?orderBy="GCID"&equalTo=${courseID}`)

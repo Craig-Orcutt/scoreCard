@@ -6,18 +6,18 @@
         </div>
 
         <p class="yardsLabel">Yards</p>
-        <div class='holeYards'ng-repeat="hole in HoleInfo">
+        <div class='holeYards {{hole.ScoreCardID}}'ng-repeat="hole in HoleInfo">
             <p>{{hole.yards}}</p>
         </div>
 
 
         <p class="parLabel">Par</p>
-        <div class='holePar'ng-repeat="hole in HoleInfo">
+        <div class='holePar {{Score.par}}'ng-repeat="hole in HoleInfo">
             <p class='{{hole.par}}'>{{hole.par}}</p>
         </div>
         <p class="scoreLabel">Score</p>
         <div class='holeScore'ng-repeat="hole in HoleInfo">
-            <input class="scoreInput {{Score.score}}" type="text">
+            <input class="scoreInput" type="text" ng-model="hole.score">
         </div>
 
         <button ng-click="NewScore()">Save Score</button>
