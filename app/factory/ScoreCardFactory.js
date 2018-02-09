@@ -54,5 +54,16 @@ angular
                     });
             });
         }
-        return { addNewScoreCard, getScoreCardList, deleteScoreCard, getSingleScoreCard };
+
+        function saveScore(scoreObj) {
+                return $q((resolve, reject) => {
+                    $http
+                        .post(`${FBUrl}scores.json`, JSON.stringify(scoreObj))
+                        .then(data => {
+                            console.log('new score Added', data.data);
+                            resolve(data.data);
+                        });
+                });
+        }
+        return { addNewScoreCard, getScoreCardList, deleteScoreCard, getSingleScoreCard, saveScore };
     });
