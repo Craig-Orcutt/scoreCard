@@ -65,5 +65,30 @@ angular
                         });
                 });
         }
-        return { addNewScoreCard, getScoreCardList, deleteScoreCard, getSingleScoreCard, saveScore };
+
+        function getSavedScore(scoreCardID) {
+            return $q((resolve, reject) => {
+                $http
+                    .get(`${FBUrl}scores/${scoreCardID}.json`)
+                    .then((data) => {
+                        resolve(data);
+                    })
+                    .catch(err => {
+                        reject(err);
+                    });
+            });
+        }
+
+        // function updateScoreCard(scoreCardID, newScore) {
+        //     return $q((resolve, reject) => {
+        //         $http
+        //             .patch(`${FBUrl}score/${scoreCardID}.json`, JSON.stringify(newScore))
+        //             .then(data => {
+        //                 console.log('new score Added', data.data);
+        //                 resolve(data.data);
+        //             });
+        //     });
+        // }
+
+        return { addNewScoreCard, getScoreCardList, deleteScoreCard, getSingleScoreCard, saveScore, getSavedScore};
     });
