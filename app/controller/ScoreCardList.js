@@ -14,11 +14,9 @@ angular
         $scope.courseSelect = (course) => {
             GolfCourseFactory.getSingleCourseSelect(course)
                 .then((data) => {
-
                     $scope.ScoreCard.name = data[0].name;
                     $scope.ScoreCard.GCID = data[0].GCID;
                     console.log('single course', data);
-                    
                 });
 
         };
