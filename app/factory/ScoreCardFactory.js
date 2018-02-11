@@ -55,10 +55,15 @@ angular
             });
         }
 
-        function saveScore(scoreObj) {
+        function saveScore(scoreObj, scoreCardID) {
+            //  removes $$hashkey key from object. Why tho??
+             Object.keys(scoreObj).forEach(key => {
+                delete scoreObj[key].$$hashKey;
+            });
                 return $q((resolve, reject) => {
                     $http
-                        .post(`${FBUrl}scores.json`, JSON.stringify(scoreObj))
+                    // put, adds the ScoreObj to the score Obj collection that matches with the scorecardID
+                        .put(`${FBUrl}scores/${scoreCardID}.json`, JSON.stringify(scoreObj))
                         .then(data => {
                             console.log('new score Added', data.data);
                             resolve(data.data);
