@@ -18,8 +18,8 @@ angular
         $scope.currentGCID = data.data.GCID;
         return GolfCourseFactory.getHoleData($scope.currentGCID)
         .then((data)=>{
+            // $scope.HoleInfo.ScoreCardID = $routeParams.id;
             $scope.HoleInfo = data;
-            $scope.HoleInfo.ScoreCardID = $routeParams.id;
             
         });
     });
@@ -63,7 +63,7 @@ angular
 
 $scope.NewScore = () =>{  
     console.log('score', $scope.HoleInfo);
-    // $scope.HoleInfo.ScoreCardID = $routeParams.id;
+    $scope.HoleInfo.ScoreCardID = $routeParams.id;
     ScoreCardFactory.saveScore($scope.HoleInfo)
     .then((data)=>{
         // console.log('gcid', currentGCID);

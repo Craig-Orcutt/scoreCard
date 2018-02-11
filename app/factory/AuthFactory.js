@@ -11,6 +11,10 @@ angular
                 .auth()
                 .signInWithPopup(provider);
         };
+        // LOGOUT WITH GOOGLE
+        let googleLogout = () => {
+            return firebase.auth().signOut();
+          };
 // Check to see if current user is logged in
         function isLoggedIn() {
             return $q((resolve, reject) => {
@@ -25,5 +29,5 @@ angular
             });
         }
 
-        return { googleLogin , isLoggedIn };
+        return { googleLogin , isLoggedIn, googleLogout };
     });
