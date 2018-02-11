@@ -17,7 +17,7 @@
         </div>
         <p class="scoreLabel">Score</p>
         <div class='holeScore'ng-repeat="hole in HoleInfo">
-            <input class="scoreInput hole.ScoreCardID" type="text" ng-model="hole.score">
+            <input class="scoreInput" type="text" ng-model="hole.score">
         </div>
 
         <button ng-click="NewScore()">Save Score</button>
