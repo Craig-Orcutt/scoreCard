@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .moduler('score')
+    .module('score')
     .controller("NavCtrl", function ($scope, $window, AuthFactory) {
 
         firebase.auth().onAuthStateChanged(function (user) {
@@ -36,7 +36,7 @@ angular
             }
         ];
 
-        $scope.logOut = navUrl => {
+        $scope.navLink = navUrl => {
             if (navUrl === "#!/logout") {
                 AuthFactory.googleLogout();
             } else {
