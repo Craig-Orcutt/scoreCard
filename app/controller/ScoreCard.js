@@ -16,81 +16,34 @@ angular
         ScoreCardFactory.getSingleScoreCard($routeParams.id)
         .then((data) => {
             $scope.currentGCID = data.data.GCID;
-            return GolfCourseFactory.getHoleData($scope.currentGCID)
+            // checks to see if there is saved scores that match the id of the scorecard
+            ScoreCardFactory.getSavedScore($routeParams.id)
+            .then((data)=>{
+                // if theres is data and is not null, use this as the data to set the HoleInfo
+                if (data.data){
+                    return data.data;
+                }
+                // else just get the holes that match the GCID to the GCID on the scorecard
+                return GolfCourseFactory.getHoleData($scope.currentGCID);
+            })
             .then((data) => {
-                // $scope.HoleInfo.ScoreCardID = $routeParams.id;
+            //    HoleInfo is the data being sent to the partial to populate the page
+                console.log('singleCour ', data);
                 $scope.HoleInfo = data;
-
-
-                    });
+                });
             });
-
-
-        // function forScoreObj () {
-        //     $scope.holeArray = Object.entries($scope.HoleInfo);
-        //     console.log('holeobj',holeArray);
-
-
-        // holeObj.forEach((data)=>{
-        //     $scope.Score.par = data[1].par;
-        //     $scope.Score.HID = data[1].holeNumber;
-
-
-        //     console.log('HID', $scope.Score.ScoreCardID);
-
-
-        // });
-
-        // }
-
-        // $scope.NewScore = () =>{  
-
-        // ScoreCardFactory.getSingleScoreCard($routeParams.id)
-        //     .then((data)=>{
-        //     $scope.currentGCID = data.data.GCID;
-        //     return GolfCourseFactory.getHoleData($scope.currentGCID)
-        //     .then((data)=>{
-        //         $scope.ScoreCollection.HID = data.holeNumber;
-        //         $scope.ScoreCollection.ScoreCardID = $routeParams.id;
-        //         console.log('hey', data[24]);
-        //     return GolfCourseFactory.saveScore($scope.ScoreCollection)
-        //     .then((data)=>{
-        //         console.log('score saved', data );
-
-        //         });  
-        //     });
-        // });
-        // };
 
         $scope.NewScore = () => {
-            console.log('score', $scope.HoleInfo);
             let holeInfo = $scope.HoleInfo;
+            // holeifo adds the key of ScoreCardId as well as a $$haskey which later needs to be removed in the saved score. why?
             Object.keys(holeInfo).forEach((element) => {
-                console.log('HoleInfor', holeInfo);
                 holeInfo[element].ScoreCardID = $routeParams.id;
             });
-            ScoreCardFactory.saveScore(holeInfo)
+            // saves score and sets id of object to match with the id of the scorecard
+            ScoreCardFactory.saveScore(holeInfo, $routeParams.id)
                 .then((data) => {
-                    console.log('holeScore', data);
-                    
-                    // console.log('gcid', currentGCID);
-                    // $route.reload();
-                    // ScoreCardFactory.getSavedScore($scope.HoleInfo)
-                    // .then((data)=>{
-                    //     console.log('getsavedScore', data );
-
-                    // });
-
+                    console.log('holeScore', data);                    
                 });
 
         };
-
-
-
-
-        // GolfCourseFactory.getHoleData()
-        // .then((data)=>{
-
-        //     $scope.HoleInfo = data;
-        //     });
     });
