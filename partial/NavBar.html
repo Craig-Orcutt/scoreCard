@@ -6,7 +6,7 @@
     <ul class="links">
         <li class="link" ng-repeat="item in navItems">
 
-              <a ng-show="{{item.bang}}isLoggedIn" ng-click="navigate(item.url)">{{item.name}}</a>
+              <a ng-show="{{item.bang}}isLoggedIn" ng-click="navLink(item.url)">{{item.name}}</a>
               <br>
         </li>
       </ul>
