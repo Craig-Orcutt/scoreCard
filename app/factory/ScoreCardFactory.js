@@ -42,11 +42,13 @@ angular
             });
         }
 
-        function getSingleScoreCard(scoreCardID) {
+        function getSingleScoreCard(scoreCardID, currentGCID) {
             return $q((resolve, reject) => {
                 $http
                     .get(`${FBUrl}scoreCards/${scoreCardID}.json`)
                     .then((data) => {
+                        console.log('SINGLECARDFACTORY', data);
+                        
                         resolve(data);
                     })
                     .catch(err => {
@@ -60,6 +62,8 @@ angular
              Object.keys(scoreObj).forEach(key => {
                 delete scoreObj[key].$$hashKey;
             });
+                console.log('SCOREOBJ', scoreObj);
+                
                 return $q((resolve, reject) => {
                     $http
                     // put, adds the ScoreObj to the score Obj collection that matches with the scorecardID
@@ -71,11 +75,13 @@ angular
                 });
         }
 
-        function getSavedScore(scoreCardID) {
+        function getSavedScore(scoreCardID, GCID) {
             return $q((resolve, reject) => {
                 $http
-                    .get(`${FBUrl}scores/${scoreCardID}.json`)
+                    .get(`${FBUrl}scores/${scoreCardID}.json?`)
                     .then((data) => {
+                        console.log('GETSAVEDSCOREFACTORY', data);
+                        
                         resolve(data);
                     })
                     .catch(err => {
