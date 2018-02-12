@@ -15,7 +15,7 @@ let isLoggedIn = (AuthFactory) => {
         });
     }); 
 };
-angular.module("score", ["ngRoute"])
+angular.module("score", ["ngRoute", "chart.js"])
     .constant("FBUrl", "https://scorecard-2a336.firebaseio.com/")
     .config($routeProvider => {
         $routeProvider
@@ -28,17 +28,21 @@ angular.module("score", ["ngRoute"])
                 controller: 'ScoreCardList',
                 resolve: { isLoggedIn }
             })
-            .when('/NewScoreCard',{
-                templateUrl: 'partial/NewScoreCard.html',
-                controller: 'NewScoreCardCtrl',
+            .when('/Stats', {
+                templateUrl: 'partial/Stats.html',
+                controller: 'StatsCtrl',
+                resolve: { isLoggedIn }
+            })
+            .when('/Stats/:id', {
+                templateUrl: 'partial/SingleStats.html',
+                controller: 'SingleStats',
                 resolve: { isLoggedIn }
             })
             .when('/ScoreCard/:id', {
                 templateUrl: 'partial/ScoreCard.html',
                 controller: 'ScoreCard',
                 resolve: { isLoggedIn }
-        
-              })
+            })
             .otherwise('/home');
     })
 
