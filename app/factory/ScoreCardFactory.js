@@ -47,7 +47,7 @@ angular
                 $http
                     .get(`${FBUrl}scoreCards/${scoreCardID}.json`)
                     .then((data) => {
-                        console.log('SINGLECARDFACTORY', data);
+                        // console.log('SINGLECARDFACTORY', data);
                         
                         resolve(data);
                     })
@@ -62,7 +62,7 @@ angular
              Object.keys(scoreObj).forEach(key => {
                 delete scoreObj[key].$$hashKey;
             });
-                console.log('SCOREOBJ', scoreObj);
+                // console.log('SCOREOBJ', scoreObj);
                 
                 return $q((resolve, reject) => {
                     $http
@@ -78,9 +78,9 @@ angular
         function getSavedScore(scoreCardID) {
             return $q((resolve, reject) => {
                 $http
-                    .get(`${FBUrl}scores/${scoreCardID}.json?`)
+                    .get(`${FBUrl}scores/${scoreCardID}.json`)
                     .then((data) => {
-                        console.log('GETSAVEDSCOREFACTORY', data);
+                        // console.log('GETSAVEDSCOREFACTORY', data);
                         
                         resolve(data);
                     })
@@ -89,17 +89,7 @@ angular
                     });
             });
         }
-
-        // function updateScoreCard(scoreCardID, newScore) {
-        //     return $q((resolve, reject) => {
-        //         $http
-        //             .patch(`${FBUrl}score/${scoreCardID}.json`, JSON.stringify(newScore))
-        //             .then(data => {
-        //                 console.log('new score Added', data.data);
-        //                 resolve(data.data);
-        //             });
-        //     });
-        // }
+        // function 
 
         return { addNewScoreCard, getScoreCardList, deleteScoreCard, getSingleScoreCard, saveScore, getSavedScore};
     });

@@ -27,7 +27,7 @@ angular
             },
             {
                 name: "Stats",
-                url: '#!/Stats.html'
+                url: '#!/Stats'
 
             },
             {
