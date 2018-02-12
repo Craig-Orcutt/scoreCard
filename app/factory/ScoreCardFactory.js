@@ -75,7 +75,7 @@ angular
                 });
         }
 
-        function getSavedScore(scoreCardID, GCID) {
+        function getSavedScore(scoreCardID) {
             return $q((resolve, reject) => {
                 $http
                     .get(`${FBUrl}scores/${scoreCardID}.json?`)
