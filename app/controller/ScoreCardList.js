@@ -7,7 +7,7 @@ angular
         $scope.ScoreCard = {
             date: '',
             GCID: '',
-            name: ''
+            name: '',
         };
 
 
