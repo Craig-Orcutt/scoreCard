@@ -7,7 +7,7 @@ angular
 
 
     $scope.StatData = [];
-
+    $scope.LoCount = [];
 
     // switch case to sort pars birdies bogies etc..
     function SwitchData(data) {
@@ -51,9 +51,33 @@ angular
                new SwitchData(data);
             
             console.log('statdat', $scope.StatData);
+            // using loDash to count up birdies bogies etc
             $scope.LoCount = _.countBy($scope.StatData);
-            console.log('LoCount', $scope.LoCount);
+
+            // set arrays for keys and values
+            let ScoreKey = Object.keys($scope.LoCount);
+            console.log('keys', ScoreKey);
+            let ScoreVal = Object.values($scope.LoCount);
+            ScoreVal.push(0);
+            console.log('vals', ScoreVal);
+            
+
+            $scope.labels = ScoreKey;
+            $scope.series = ['Series A'];
+          
+            $scope.data = [
+                ScoreVal
+            ];
+
+            $scope.barDatasetOverride = [
+                {
+                    label: "Bar chart",
+                    borderWidth: 1,
+                    type: 'bar'
+                }
+            ];
         });
+        
         
         
 });
