@@ -8,11 +8,18 @@ angular
             score : 0
         };
 
+        $scope.ScoreCard = {
+            roundScore : ''
+        };
+
+
     
     ScoreCardFactory.getSingleScoreCard($routeParams.id)
         .then((data) => {
         // checks to see if there is saved scores that match the id of the scorecard
-        $scope.currentGCID = data.data.GCID;
+        $scope.ScoreCard = data.data;
+        console.log('score', $scope.ScoreCard);
+
         ScoreCardFactory.getSavedScore($routeParams.id)
         .then((data)=>{
             // if theres is data and is not null, use this as the data to set the HoleInfo
@@ -26,7 +33,7 @@ angular
                 return holes;
             }
             // else just get the holes that match the GCID to the GCID on the scorecard
-            return GolfCourseFactory.getHoleData($scope.currentGCID);
+            return GolfCourseFactory.getHoleData($scope.ScoreCard.GCID);
         })
         .then((data) => {
             //    HoleInfo is the data being sent to the partial to populate the page
@@ -57,21 +64,15 @@ angular
 // uses factory call to get the collection of scores
     ScoreCardFactory.getSavedScore($routeParams.id)
         .then((data)=>{
-        let scores = [];
-        
-        if (data.data){
-            console.log('DATA', data);
-            
+        let scores = [];       
+        if (data.data){      
             // Filters out data that is null
                 scores =  data.data.filter(hole =>{
                 if(hole !== null){
                     return hole;
                     }
-
                 });
             }
-            console.log('holes', scores);
-            
         // declares ScoreTotal to scope
             $scope.ScoreTotal =  {
             Total : 0
@@ -80,9 +81,24 @@ angular
             scores.forEach((element)=>{
                 if(element.score !==  undefined){
                 $scope.ScoreTotal.Total = $scope.ScoreTotal.Total + element.score;
-                }
+            }
+        });
+        
+        // $scope.RoundScore = {
+            //     roundScore: 0,
+            //     ScoreCard : $routeParams.id
+            // };
+            console.log('scoretotes',$scope.ScoreTotal.Total);
+            console.log('roundsCOrrrrrr', $scope.ScoreCard.roundScore);
+            $scope.ScoreCard.roundScore = $scope.ScoreTotal.Total; 
+            
+            console.log('roundSc', $scope.ScoreCard);
+            
+            ScoreCardFactory.addScoreTotalToCard($routeParams.id, $scope.ScoreCard)
+            .then((data)=>{
+                console.log('SCoreCardTotal', data);
+                
             });
-            console.log('ScoreTotal', $scope.ScoreTotal.Total);
         });
     }; 
     

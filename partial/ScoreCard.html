@@ -17,7 +17,7 @@
         </div>
         <p class="scoreLabel">Score</p>
         <div class='holeScore'ng-repeat="hole in HoleInfo">
-            <input class="scoreInput" type="number" ng-model="hole.score" ng-blur="NewScore(); NewTotal()">
+            <input class="scoreInput" type="number" ng-model="hole.score" ng-blur="NewScore()" ng-focus="NewTotal()">
         </div>
 
         <p> total:{{ScoreTotal.Total}}</p>

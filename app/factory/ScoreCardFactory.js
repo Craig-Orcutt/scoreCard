@@ -15,6 +15,18 @@ angular
             });
         }
 
+        function addScoreTotalToCard(scoreCardID, scoreCardObj) {
+            return $q((resolve, reject) => {
+                $http
+                    .put(`${FBUrl}scoreCards/${scoreCardID}.json`, JSON.stringify(scoreCardObj))
+                    .then(data => {
+                        console.log('FACTORY Total Added to ScoreCard', data.data);
+                        resolve(data.data);
+                    });
+            });
+        }
+
+
         function getScoreCardList(scoreCardID) {
             return $q((resolve, reject) => {
                 $http
@@ -69,7 +81,6 @@ angular
                     // put, adds the ScoreObj to the score Obj collection that matches with the scorecardID
                         .put(`${FBUrl}scores/${scoreCardID}.json`, JSON.stringify(scoreObj))
                         .then(data => {
-                            console.log('new score Added', data.data);
                             resolve(data.data);
                         });
                 });
@@ -91,5 +102,5 @@ angular
         }
         // function 
 
-        return { addNewScoreCard, getScoreCardList, deleteScoreCard, getSingleScoreCard, saveScore, getSavedScore};
+        return { addNewScoreCard, getScoreCardList, deleteScoreCard, getSingleScoreCard, saveScore, getSavedScore, addScoreTotalToCard};
     });
