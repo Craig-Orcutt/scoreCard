@@ -17,6 +17,9 @@ angular
         }
     });
 
+    $scope.goToScoreCard = (scoreCardId) => {
+        $location.url(`/ScoreCard/${scoreCardId}`);
+    };
 
     $scope.goToSingleStats = (scoreCardId) => {
         $location.url(`/Stats/${scoreCardId}`);
