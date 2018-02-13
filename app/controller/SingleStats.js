@@ -32,7 +32,7 @@ angular
     //         });
 
     //     });
-       
+
     
         ScoreCardFactory.getSavedScore($routeParams.id)
             .then(({data})=>{
@@ -60,14 +60,12 @@ angular
                         default:
                         $scope.ParData.bad += element.score;
                         break;
-
-
-    
                     }
-    
             });
             console.log('statdat', $scope.ParData);
         });
-
+        let hapDat = _.countBy($scope.ParData);
+        console.log('hap', hapDat);
+        
         
 });
