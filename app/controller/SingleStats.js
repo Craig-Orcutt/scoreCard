@@ -75,16 +75,22 @@ angular
             $scope.data = [
                 ScoreVal
             ];
+
+            $scope.colors = [{ 
+                    borderColor: 'rgba(204, 118, 161, 1)',
+                    backgroundColor: 'rgba(135, 179, 141, 1)',
+              }];
+            // $scope.chartOptions = 
 // not sure what but im supposed to have it
-            // $scope.barDatasetOverride = [
-            //     {
-            //         label: "Bar chart",
-            //         borderWidth: 1,
-            //         type: 'bar'
-            //     }
-            // ];
+            $scope.barDatasetOverride = [
+                {
+                    label: "Bar chart",
+                    borderWidth: 1,
+                    type: 'bar'
+                }
+            ];
         });
         
-        
+ 
         
 });
