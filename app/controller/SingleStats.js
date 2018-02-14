@@ -47,12 +47,19 @@ angular
     // gets scores for current scorecard
         ScoreCardFactory.getSavedScore($routeParams.id)
             .then(({data})=>{
-                console.log('data', data);
-               new SwitchData(data);
+                // once again filters out null data
+                let scores = [];
+                scores =  data.filter(hole =>{
+                    if(hole !== null){
+                        return hole;
+                        }
+                    });
+               new SwitchData(scores);
             
-            console.log('statdat', $scope.StatData);
-            // using loDash to count up birdies bogies etc
-            $scope.LoCount = _.countBy($scope.StatData);
+               
+               // using loDash to count up birdies bogies etc
+               $scope.LoCount = _.countBy($scope.StatData);
+               
 
             // set arrays for keys and values
             let ScoreKey = Object.keys($scope.LoCount);
@@ -61,14 +68,14 @@ angular
             ScoreVal.push(0);
             console.log('vals', ScoreVal);
             
-
+// setting array to x axis
             $scope.labels = ScoreKey;
             $scope.series = ['Series A'];
-          
+        //   setting array to y axis
             $scope.data = [
                 ScoreVal
             ];
-
+// not sure what but im supposed to have it
             $scope.barDatasetOverride = [
                 {
                     label: "Bar chart",
