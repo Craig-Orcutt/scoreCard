@@ -75,12 +75,35 @@ angular
             $scope.data = [
                 ScoreVal
             ];
-
+// set colors of bar graph
             $scope.colors = [{ 
                     borderColor: 'rgba(204, 118, 161, 1)',
                     backgroundColor: 'rgba(135, 179, 141, 1)',
               }];
             // $scope.chartOptions = 
+
+            // options for labels on x an y axes 
+            $scope.labelOptions = {
+
+                    scales: { 
+                        yAxes: [{
+                            ticks: {
+                                fontColor: "white",
+                                fontSize : 40,
+                                stepSize: 1,
+                                beginAtZero: true
+                            }
+                        }],
+                        xAxes : [{
+                            ticks: {
+                                fontColor: 'white',
+                                // fontSize: 20,
+                                fontFamily: 'Futura'
+                            }
+                        }]
+                    }
+                };
+            
 // not sure what but im supposed to have it
             $scope.barDatasetOverride = [
                 {

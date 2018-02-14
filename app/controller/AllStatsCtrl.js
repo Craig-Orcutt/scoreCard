@@ -33,14 +33,33 @@ angular
         $scope.data = [
             $scope.RoundScores
         ];
-// not sure what but im supposed to have it
-        $scope.barDatasetOverride = [
-            {
-                label: "Bar chart",
-                borderWidth: 1,
-                type: 'bar'
+// colors for graph
+$scope.colors = [{ 
+    borderColor: 'rgba(204, 118, 161, 1)',
+    backgroundColor: 'rgba(135, 179, 141, 1)',
+}];
+
+// options for x and y axes
+$scope.labelOptions = {
+
+    scales: { 
+        yAxes: [{
+            ticks: {
+                fontColor: "white",
+                fontSize : 20,
+                stepSize: 5,
+                beginAtZero: true
             }
-        ];
+        }],
+        xAxes : [{
+            ticks: {
+                fontColor: 'white',
+                fontSize: 15,
+                fontFamily: 'Futura'
+            }
+        }]
+    }
+};
     
         
 
