@@ -13,6 +13,9 @@ angular
         };
         // LOGOUT WITH GOOGLE
         let googleLogout = () => {
+            // Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(status => {
+            //     mFirebaseAuth.signOut();
+            // })
             return firebase.auth().signOut();
           };
 // Check to see if current user is logged in
