@@ -70,19 +70,19 @@ angular
             
 // setting array to x axis
             $scope.labels = ScoreKey;
-            $scope.series = ['Series A'];
+            // $scope.series = ['Series A'];
         //   setting array to y axis
             $scope.data = [
                 ScoreVal
             ];
 // not sure what but im supposed to have it
-            $scope.barDatasetOverride = [
-                {
-                    label: "Bar chart",
-                    borderWidth: 1,
-                    type: 'bar'
-                }
-            ];
+            // $scope.barDatasetOverride = [
+            //     {
+            //         label: "Bar chart",
+            //         borderWidth: 1,
+            //         type: 'bar'
+            //     }
+            // ];
         });
         
         
