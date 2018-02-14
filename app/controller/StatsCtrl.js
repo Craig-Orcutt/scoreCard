@@ -10,7 +10,6 @@ angular
                 .then((data) => {
                     console.log('scorecards', data);
                     $scope.AllScoreCards = data;
-                    // GolfCourseFactory.getCourseData()
                 });
         } else {
             console.log('err');
