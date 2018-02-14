@@ -100,7 +100,20 @@ angular
                     });
             });
         }
-        // function 
+        function getAllScoreCards() {
+            return $q((resolve, reject) => {
+                $http
+                    .get(`${FBUrl}scoreCards.json`)
+                    .then((data) => {
+                        console.log('factory', data);
+                        
+                        resolve(data);
+                    })
+                    .catch(err => {
+                        reject(err);
+                    });
+            });
+        }
 
-        return { addNewScoreCard, getScoreCardList, deleteScoreCard, getSingleScoreCard, saveScore, getSavedScore, addScoreTotalToCard};
+        return { addNewScoreCard, getScoreCardList, deleteScoreCard, getSingleScoreCard, saveScore, getSavedScore, addScoreTotalToCard, getAllScoreCards};
     });
