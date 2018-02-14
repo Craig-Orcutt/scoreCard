@@ -10,7 +10,6 @@ angular
                 .then((data) => {
                     console.log('scorecards', data);
                     $scope.AllScoreCards = data;
-                    // GolfCourseFactory.getCourseData()
                 });
         } else {
             console.log('err');
@@ -30,6 +29,6 @@ angular
     };
 
     $scope.UserStats =  () => {        
-        $location.url(`/Stats/all`);
+        $location.url(`/Stats/user`);
     };
 });
