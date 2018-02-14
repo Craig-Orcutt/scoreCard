@@ -33,6 +33,11 @@ angular.module("score", ["ngRoute", "chart.js"])
                 controller: 'StatsCtrl',
                 resolve: { isLoggedIn }
             })
+            .when('/Stats/all', {
+                templateUrl: 'partial/AllStats.html',
+                controller: 'AllStatsCtrl',
+                resolve: { isLoggedIn }
+            })
             .when('/Stats/:id', {
                 templateUrl: 'partial/SingleStats.html',
                 controller: 'SingleStats',
