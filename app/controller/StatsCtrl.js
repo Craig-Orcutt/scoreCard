@@ -24,4 +24,12 @@ angular
     $scope.goToSingleStats = (scoreCardId) => {
         $location.url(`/Stats/${scoreCardId}`);
     };
+
+    $scope.AllStats =  () => {        
+        $location.url(`/Stats/all`);
+    };
+
+    $scope.UserStats =  () => {        
+        $location.url(`/Stats/all`);
+    };
 });
