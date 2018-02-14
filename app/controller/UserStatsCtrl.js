@@ -33,13 +33,33 @@ angular
         $scope.GraphScore
     ];
 // not sure what but im supposed to have it
-    $scope.barDatasetOverride = [
-        {
-            label: "Bar chart",
-            borderWidth: 1,
-            type: 'bar'
-        }
-    ];
+$scope.colors = [{ 
+    borderColor: 'rgba(204, 118, 161, 1)',
+    backgroundColor: 'rgba(135, 179, 141, 1)',
+}];
+// $scope.chartOptions = 
+
+// options for labels on x an y axes 
+$scope.labelOptions = {
+
+    scales: { 
+        yAxes: [{
+            ticks: {
+                fontColor: "white",
+                fontSize : 20,
+                stepSize: 5,
+                beginAtZero: true
+            }
+        }],
+        xAxes : [{
+            ticks: {
+                fontColor: 'white',
+                fontSize: 20,
+                fontFamily: 'Futura'
+            }
+        }]
+    }
+};
 
     
     
