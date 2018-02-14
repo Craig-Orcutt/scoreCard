@@ -29,6 +29,6 @@ angular
     };
 
     $scope.UserStats =  () => {        
-        $location.url(`/Stats/all`);
+        $location.url(`/Stats/user`);
     };
 });
