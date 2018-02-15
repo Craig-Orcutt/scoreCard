@@ -1,3 +1,44 @@
+body{
+    background-image: url(../images/grassResized.jpg);
+    }
+
+// NAVBAR
+.navbarContainer {
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(2,150px);
+}
+
+.navLink {
+    grid-column: 1 / 6;
+    grid-row: 2;
+}
+.logoScore{
+    grid-column: 4 / 5;
+    grid-row: 1;
+    font-size: 50px;
+    // font-family: 'Lobster', cursive;
+    // font-family: 'Pacifico', cursive;
+    // font-family: 'Exo 2', sans-serif;
+    font-family: 'Passion One', cursive;
+    // font-family: 'Shrikhand', cursive;
+}
+
+.logoCaddy{
+    grid-column: 5 / 7;
+    grid-row: 1;
+    font-size: 70px;
+    font-family: 'Lobster', cursive;
+    // font-family: 'Pacifico', cursive;
+    // font-family: 'Exo 2', sans-serif;
+    // font-family: 'Passion One', cursive;
+    // font-family: 'Shrikhand', cursive;
+}
+
+
+
+
+// LIST FOR SCORECARDS
 .scoreCardList {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -9,6 +50,7 @@
     border: 5px solid black;
 }
 
+// SCORE CARD GRID
 .scoreCardContainer{
     display: grid;
     grid-template-rows: repeat(4,1fr);
@@ -51,11 +93,11 @@
 .scoreInput{
     width: 65px;
 }
-body{
-background-image: url(../images/grassResized.jpg);
-}
+// END SCORECARD GRID
 
-    
+
+
+    // STATS STYLING
 #singleStats{
     margin-left: 100px;
     padding-top: 20px;
@@ -67,6 +109,3 @@ background-image: url(../images/grassResized.jpg);
     
 }
 
-// .homeBackground {
-    
-// }
