@@ -50,7 +50,9 @@ body{
     // font-family: 'Shrikhand', cursive;
 }
 
-
+.active {
+    background-color: greenyellow;
+}
 
 
 // LIST FOR SCORECARDS
@@ -63,6 +65,7 @@ body{
     display: grid;
     grid-template-rows: repeat(3,1fr);
     border: 5px solid black;
+    background-color: bisque;
 }
 
 // SCORE CARD GRID
