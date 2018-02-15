@@ -5,6 +5,7 @@ angular
 .controller('UserStatsCtrl', function($scope , ScoreCardFactory){
     $scope.GraphScore = [];
     $scope.GraphDate = [];
+    $scope.average = 0;
 
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -18,13 +19,23 @@ angular
                             $scope.GraphScore.push(element.roundScore);
                     });
 
-
-
+                    $scope.average = _.mean($scope.GraphScore).toFixed(2);
+                    console.log('average', $scope.average);
+                    
                 });
         } else {
             console.log('err');
         }
     });
+
+    
+    
+
+
+
+
+
+    
     // setting array to x axis
     $scope.labels = $scope.GraphDate;
     $scope.series = ['Series A'];

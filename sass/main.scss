@@ -12,6 +12,20 @@ body{
 .navLink {
     grid-column: 1 / 6;
     grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1;
+    margin-top: 50px;
+}
+.navLink div {
+    text-align: center;
+    height: 4rem;
+    // padding-top:10px;
+    // width: 10rem;
+    border: 3px solid black;
+    border-radius: 3px 15px 0 0;
+    font-family: 'Gritstone Script';
+    font-size: 40px;
 }
 .logoScore{
     grid-column: 4 / 5;
@@ -108,5 +122,11 @@ body{
     font-family: "Futura";
     font: red;
     
+}
+
+.roundAverage{
+    font-family: 'Futura';
+    font-size: 40px;
+    color: white;
 }
 

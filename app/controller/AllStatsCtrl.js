@@ -23,9 +23,9 @@ angular
 
                 
             });
-            console.log('scores', $scope.RoundScores);
-            console.log('dates', $scope.RoundDates);
-            $scope.RoundScores.push(0);
+
+        $scope.AllScoresAverage = _.mean($scope.RoundScores).toFixed(2);    
+
         // setting array to x axis
         $scope.labels = $scope.RoundDates;
         $scope.series = ['Series A'];
