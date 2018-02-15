@@ -15,26 +15,26 @@ angular
             }
         });
 
-        $scope.navItems = [
+        
 
-            {
+            $scope.homePage = {
                 name: "Home",
                 url: "#!/Home"
-            },
-            {
+            };
+            $scope.roundPage = {
                 name: "Rounds",
                 url: "#!/ScoreCardList"
-            },
-            {
+            };
+            $scope.statsPage ={
                 name: "Stats",
                 url: '#!/Stats'
 
-            },
-            {
+            };
+            $scope.logOut = {
                 name: "Logout",
                 url: "#!/logout"
-            }
-        ];
+            };
+        
 
         $scope.navLink = navUrl => {
             if (navUrl === "#!/logout") {
