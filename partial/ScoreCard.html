@@ -1,4 +1,4 @@
-<div class= 'scoreCardContainer' ng-init="NewTotal()">
+<div class= 'scoreCardContainer'>
 <!-- used ng-if to filter out the null objects when all of holeinfo is generating data -->
         <p class="holeLabel">Hole</p>
         <div class='holeNumber'ng-repeat="hole in HoleInfo">
@@ -20,8 +20,8 @@
             <input class="scoreInput" type="number" ng-model="hole.score" ng-blur="NewScore()" ng-focus="NewTotal()">
         </div>
 
-        <p> total:{{ScoreTotal.Total}}</p>
         
         <!-- <button ng-click="submitTotalScore()">Finish Round</button> -->
         
-</div>
+        <p> total:{{ScoreTotal.Total}}</p>
+    </div>
