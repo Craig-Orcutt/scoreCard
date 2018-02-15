@@ -10,6 +10,10 @@ angular
             name: '',
         };
 
+        $scope.CourseDropDown = {
+            name : ''
+        };
+
 
         $scope.courseSelect = (course) => {
             GolfCourseFactory.getSingleCourseSelect(course)
@@ -20,13 +24,17 @@ angular
                 });
 
         };
+
         // get course data to setup the dropdown menu and get the course IDS for each course
         GolfCourseFactory.getAllCourseData()
             .then((data) => {
                 console.log('ctrldata', data.data);
 
                 $scope.CourseList = data.data;
+                $scope.CourseDropDown.name  = data.data[0].name;
             });
+
+
 
         // creates scoreCard by plugin in the object created in the form and plugging in the UID of the current user
         $scope.CreateScoreCard = () => {
