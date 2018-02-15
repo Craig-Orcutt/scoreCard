@@ -2,8 +2,13 @@
 
 angular
     .module('score')
-    .controller("NavCtrl", function ($scope, $window, AuthFactory) {
+    .controller("NavCtrl", function ($scope, $window, AuthFactory, $location) {
 
+    $scope.isActive = function (viewLocation) { 
+        return viewLocation === $location.path();
+    };
+
+// shows tabs for navbar based on whether the use is logged in or not
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
                 $scope.$apply(($scope.isLoggedIn = true));
