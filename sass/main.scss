@@ -6,11 +6,11 @@ body{
 .navbarContainer {
     display: grid;
     grid-template-columns: repeat(10,1fr);
-    grid-template-rows: repeat(2,150px);
+    grid-template-rows: repeat(2,100px);
 }
 
 .navLink {
-    grid-column: 1 / 6;
+    grid-column: 3 / 9;
     grid-row: 2;
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -27,27 +27,17 @@ body{
     font-family: 'Gritstone Script';
     font-size: 40px;
 }
-.logoScore{
-    grid-column: 4 / 5;
-    grid-row: 1;
-    font-size: 50px;
-    // font-family: 'Lobster', cursive;
-    // font-family: 'Pacifico', cursive;
-    // font-family: 'Exo 2', sans-serif;
-    font-family: 'Passion One', cursive;
-    // font-family: 'Shrikhand', cursive;
-}
 
 .logoCaddy{
-    grid-column: 5 / 7;
+    grid-column: 3 / 8;
     grid-row: 1;
-    font-size: 70px;
-    // font-family: 'Lobster', cursive;
+    font-size: 200px;
+    margin-top: -100px;
+    text-align: center;
+    text-shadow: 5px 2px #A4B494;
     font-family: 'Gritstone Script';
-    // font-family: 'Pacifico', cursive;
-    // font-family: 'Exo 2', sans-serif;
-    // font-family: 'Passion One', cursive;
-    // font-family: 'Shrikhand', cursive;
+    color: #2A2B2A;
+
 }
 
 .active {
@@ -60,6 +50,7 @@ body{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 10px;
+    padding-top: 20px;
 }
 .scoreCardCard {
     display: grid;
