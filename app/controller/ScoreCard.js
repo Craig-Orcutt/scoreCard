@@ -9,7 +9,11 @@ angular
         };
 
         $scope.ScoreCard = {
-            roundScore : ''
+            roundScore : '',
+            GCID : '',
+            date : '',
+            name : '',
+            uid : ''
         };
 
 
@@ -38,7 +42,7 @@ angular
         .then((data) => {
             //    HoleInfo is the data being sent to the partial to populate the page
             $scope.HoleInfo = data;
-            
+            $scope.NewTotal();
             
             
         });
