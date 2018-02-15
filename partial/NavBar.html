@@ -1,14 +1,17 @@
-<nav class="navbar" ng-controller="NavCtrl">
-    
-    <!-- <div ng-show="isUserActive('/login')"></div> -->
-    <div class="welcome"><h2>Score Card</h2></div>
-    
-    <ul class="navLinkList">
-        <li class="navLink" ng-repeat="item in navItems">
+<nav class="navbarContainer" ng-controller="NavCtrl">
 
-              <a ng-show="{{item.bang}}isLoggedIn" ng-click="navLink(item.url)">{{item.name}}</a>
-              <br>
-        </li>
-      </ul>
-    <!-- </div> -->
+    
+        <div class="logoWhole">
+            <p class="logoScore">Score</p>
+            <p class="logoCaddy">ScoreCaddy</p>
+        </div>
+
+    
+        <div class="navLink">
+            <div ng-show="{{homePage.bang}}isLoggedIn" ng-click="navLink(homePage.url)">{{homePage.name}}</div>
+            <div ng-show="{{roundPage.bang}}isLoggedIn" ng-click="navLink(roundPage.url)">{{roundPage.name}}</div>
+            <div ng-show="{{statsPage.bang}}isLoggedIn" ng-click="navLink(statsPage.url)">{{statsPage.name}}</div>
+            <div ng-show="{{logOut.bang}}isLoggedIn" ng-click="navLink(logOut.url)">{{logOut.name}}</div>
+        </div>
+    
 </nav>
