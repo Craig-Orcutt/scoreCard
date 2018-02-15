@@ -14,31 +14,31 @@ angular
         data.forEach((element)=>{
             switch(element.score){
                 case element.par -3:
-                $scope.StatData.push('albatross');
+                $scope.StatData.push('Albatross');
                 break;
 
                 case element.par -2:
-                $scope.StatData.push(`eagle`);
+                $scope.StatData.push(`Eagle`);
                 break;
 
                 case element.par -1:
-                $scope.StatData.push(`birdie`);
+                $scope.StatData.push(`Birdie`);
                 break;
 
                 case element.par: 
-                $scope.StatData.push(`par`);
+                $scope.StatData.push(`Par`);
                 break;
 
                 case element.par +1:
-                $scope.StatData.push(`bogie`);
+                $scope.StatData.push(`Bogie`);
                 break;
 
                 case element.par +2:
-                $scope.StatData.push(`doubleBogie`);
+                $scope.StatData.push(`Double Bogie`);
                 break;
 
                 default:
-                $scope.StatData.push(`bad`);
+                $scope.StatData.push(`Bad`);
                 break;
             }
         });
