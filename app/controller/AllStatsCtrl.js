@@ -46,15 +46,15 @@ $scope.labelOptions = {
         yAxes: [{
             ticks: {
                 fontColor: "white",
-                fontSize : 20,
-                stepSize: 5,
+                fontSize : 15,
+                stepSize: 10,
                 beginAtZero: true
             }
         }],
         xAxes : [{
             ticks: {
                 fontColor: 'white',
-                fontSize: 15,
+                fontSize: 20,
                 fontFamily: 'Futura'
             }
         }]
