@@ -69,7 +69,6 @@ $scope.labelOptions = {
 				gridLines:{
 					display:false,
 				},
-            curvature: 1,
             ticks: {
                 fontColor: 'white',
                 fontSize: 20,
