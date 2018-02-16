@@ -97,7 +97,7 @@ angular
                         xAxes : [{
                             ticks: {
                                 fontColor: 'white',
-                                // fontSize: 20,
+                                fontSize: 20,
                                 fontFamily: 'Futura'
                             }
                         }]
