@@ -12,6 +12,8 @@ body{
     display: grid;
     grid-template-columns: repeat(10,1fr);
     grid-template-rows: repeat(2,100px);
+    border-bottom: 10px solid #2A2B2A;
+    padding-bottom: 30px;
 }
 
 .navLink {
@@ -21,23 +23,27 @@ body{
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: 1;
     margin-top: 50px;
+    
+
 }
 .navLink div {
     text-align: center;
-    height: 4rem;
+    height: 5rem;
     // padding-top:10px;
     // width: 10rem;
-    border: 3px solid black;
+    border: 3px solid #2A2B2A;
     border-radius: 3px 15px 0 0;
     font-family: 'Gritstone Script';
-    font-size: 40px;
+    font-size: 50px;
+    vertical-align: middle;
 }
 
 .logoCaddy{
     grid-column: 3 / 8;
     grid-row: 1;
     font-size: 200px;
-    margin-top: -100px;
+    margin-top: -110px;
+    margin-left: 10rem;
     text-align: center;
     text-shadow: 5px 2px #A4B494;
     font-family: 'Gritstone Script';
@@ -57,7 +63,7 @@ body{
     text-align: center;
     font-family: 'Futura';
     background-color: #96A13A;
-    border: 1rem solid #CFE0C3;
+    border: 1rem solid #A4B494;
     border-radius: 5px;
     color: #CFE0C3;
 }
@@ -72,9 +78,9 @@ body{
 .scoreCardCard {
     display: grid;
     grid-template-rows: repeat(3,1fr);
-    border: 5px solid black;
+    border: 5px solid #2A2B2A;
     border-radius: 4px;
-    background-color: #A4B494;
+    background-color: #D0D1AC;
     text-align: center
 }
 
