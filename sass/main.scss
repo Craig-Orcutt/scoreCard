@@ -1,16 +1,12 @@
 body{
+    background-color: black;
     background: url(../images/grassResized.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     }
-    // html {
-    //     background: url(../images/grassResized.jpg) no-repeat center center fixed;
-        // 
-    //     height: 100%;
-    //     overflow: hidden;
-    //   }
+
 // NAVBAR
 .navbarContainer {
     display: grid;
@@ -50,14 +46,26 @@ body{
 }
 
 .active {
-    background-color: greenyellow;
+    background-color: #96A13A;
 }
 
+// HOME PAGE
+.homeWelcome {
+    margin-top: 100px;
+    margin-left: 318px;
+    margin-right: 318px;
+    text-align: center;
+    font-family: 'Futura';
+    background-color: #96A13A;
+    border: 1rem solid #CFE0C3;
+    border-radius: 5px;
+    color: #CFE0C3;
+}
 
 // LIST FOR SCORECARDS
 .scoreCardList {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-gap: 10px;
     padding-top: 20px;
 }
@@ -67,6 +75,7 @@ body{
     border: 5px solid black;
     border-radius: 4px;
     background-color: #A4B494;
+    text-align: center
 }
 
 // SCORE CARD GRID
@@ -135,20 +144,27 @@ body{
 
 
     // STATS STYLING
-#singleStats{
-    margin-left: 100px;
+.singleStats {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
     padding-top: 20px;
-    height: 800;
     width: 800px;
     background: rgba(0, 0, 0, 0.3);
     font-family: "Futura";
-    font: red;
     
 }
 
+.allUserScoresAvg {
+    font-family: 'Futura';
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
 .roundAverage{
     font-family: 'Futura';
     font-size: 40px;
     color: white;
+    text-align: center;
 }
 
