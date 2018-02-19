@@ -46,7 +46,7 @@ angular
 
     // gets scores for current scorecard
         ScoreCardFactory.getSavedScore($routeParams.id)
-            .then(({data})=>{
+            .then((data)=>{
                 // once again filters out null data
                 let scores = [];
                 scores =  data.filter(hole =>{
@@ -54,13 +54,10 @@ angular
                         return hole;
                         }
                     });
-               new SwitchData(scores);
-            
-               
-               // using loDash to count up birdies bogies etc
-               $scope.LoCount = _.countBy($scope.StatData);
-               
+                new SwitchData(scores);
 
+                // using loDash to count up birdies bogies etc
+                $scope.LoCount = _.countBy($scope.StatData);
             // set arrays for keys and values
             let ScoreKey = Object.keys($scope.LoCount);
             console.log('keys', ScoreKey);
@@ -79,7 +76,7 @@ angular
             $scope.colors = [{ 
                     borderColor: 'rgba(204, 118, 161, 1)',
                     backgroundColor: 'rgba(135, 179, 141, 1)',
-              }];
+                }];
             // $scope.chartOptions = 
 
             // options for labels on x an y axes 
@@ -95,6 +92,8 @@ angular
                             }
                         }],
                         xAxes : [{
+                            stacked: true,
+                            barThickness: 75,
                             ticks: {
                                 fontColor: 'white',
                                 fontSize: 20,
@@ -114,6 +113,6 @@ angular
             ];
         });
         
- 
+
         
 });
