@@ -92,7 +92,8 @@ angular
                 $http
                     .get(`${FBUrl}scores/${scoreCardID}.json`)
                     .then(({data}) => {
-                        // console.log('GETSAVEDSCOREFACTORY', data);
+
+                        // if there is null data and if the type of data is an object, assign data to variable savedscores. for some reason the data was occasionally coming back as an object of objects instead of an array of objects. this solves that problem. 
                         if(data !== null){
                             if(typeof data === "object"){
                                savedScores = Object.values(data);
