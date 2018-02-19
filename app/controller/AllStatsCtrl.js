@@ -35,8 +35,9 @@ angular
         ];
 // colors for graph
 $scope.colors = [{ 
-    borderColor: 'rgba(204, 118, 161, 1)',
-    backgroundColor: 'rgba(135, 179, 141, 1)',
+    borderColor: ['rgba(178, 103, 94, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)',],
+    backgroundColor: ['rgba(187, 214, 134, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)',],
+    borderWidth: 4  
 }];
 
 // options for x and y axes
@@ -52,6 +53,11 @@ $scope.labelOptions = {
             }
         }],
         xAxes : [{
+            stacked: true,
+			barThickness: 50,
+				gridLines:{
+					display:true,
+				},
             ticks: {
                 fontColor: 'white',
                 fontSize: 20,

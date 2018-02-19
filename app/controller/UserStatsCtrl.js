@@ -47,7 +47,7 @@ angular
 $scope.colors = [{ 
     borderColor: 'rgba(204, 118, 161, 1)',
     backgroundColor: 'rgba(135, 179, 141, 1)',
-    borderWidth: 10
+    borderWidth: 3
 }];
 // $scope.chartOptions = 
 
@@ -67,7 +67,7 @@ $scope.labelOptions = {
             stacked: true,
 			barThickness: 75,
 				gridLines:{
-					display:false,
+					display:true,
 				},
             ticks: {
                 fontColor: 'white',
