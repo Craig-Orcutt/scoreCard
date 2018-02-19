@@ -88,12 +88,17 @@ angular
 
         function getSavedScore(scoreCardID) {
             return $q((resolve, reject) => {
+                let savedScores;
                 $http
                     .get(`${FBUrl}scores/${scoreCardID}.json`)
-                    .then((data) => {
+                    .then(({data}) => {
                         // console.log('GETSAVEDSCOREFACTORY', data);
-                        
-                        resolve(data);
+                        if(data !== null){
+                            if(typeof data === "object"){
+                               savedScores = Object.values(data);
+                            }
+                        }
+                        resolve(savedScores);
                     })
                     .catch(err => {
                         reject(err);

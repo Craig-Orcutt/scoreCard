@@ -27,9 +27,9 @@ angular
         ScoreCardFactory.getSavedScore($routeParams.id)
         .then((data)=>{
             // if theres is data and is not null, use this as the data to set the HoleInfo
-            if (data.data){
+            if (data){
                 // Filters out data that is null
-                let holes =  data.data.filter(hole =>{
+                let holes =  data.filter(hole =>{
                     if(hole !== null){
                         return hole;
                     }
@@ -69,9 +69,9 @@ angular
     ScoreCardFactory.getSavedScore($routeParams.id)
         .then((data)=>{
         let scores = [];       
-        if (data.data){      
+        if (data){      
             // Filters out data that is null
-                scores =  data.data.filter(hole =>{
+                scores =  data.filter(hole =>{
                 if(hole !== null){
                     return hole;
                     }
