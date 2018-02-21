@@ -1,8 +1,7 @@
 body{
     background-color: black;
     background: url(../images/topography.svg),
-    linear-gradient(20deg, #a1c89e, #636940);; 
-
+    linear-gradient(20deg, #a1c89e, #636940);
     background-size: 340px, auto;
     min-height: calc(100vh - 100px);
     margin: 50px;
@@ -64,17 +63,21 @@ body{
 }
 
 // LIST FOR SCORECARDS
+.scoreCardCreate {
+    margin: 40px;
+}
 .scoreCardList {
     // background: url(https://static1.squarespace.com/static/59deb84a37c5811562f90f11/t/59dec018197aeac813bd7845/1507770396553/mint-green-paper-texture-with-flecks.jpg?format=1500w);
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap: 10px;
     padding-top: 20px;
+    margin: 40px;
 }
 .scoreCardCard {
     display: grid;
     grid-template-columns: 2;
-    grid-template-rows: 150px 1fr 1fr 1fr;
+    grid-template-rows: 150px 40px 40px 40px;
     border: 5px solid #2A2B2A;
     border-radius: 4px;
     background-color: #D0D1AC;
@@ -110,11 +113,11 @@ body{
 }
 .scoreCardCourseScore{
     grid-row: 4;
-    grid-column: 1 / -1;
+    grid-column: 2;
 }
 // overlay hover for view button
 .scoreCard__overlay {
-    background: #ffc60032;
+    background: rgba(161, 200, 158, 1);
     grid-column: 1 / -1;
     grid-row: 1 / -1;
     position: relative;
@@ -122,7 +125,7 @@ body{
     display: grid;
     justify-items: center;
     align-items: center;
-    transition: 0.5s;
+    transition: 0.6s;
     transform: translateY(100%);
 } 
 .scoreCard__overlay button {
