@@ -10,41 +10,33 @@ body{
 // NAVBAR
 .navbarContainer {
     display: grid;
-    grid-template-columns: repeat(10,1fr);
-    grid-template-rows: repeat(2,100px);
-    border-bottom: 10px solid #2A2B2A;
-    padding-bottom: 30px;
+    grid-template-columns: 1fr 800px 1fr;
+    grid-template-rows: 200px 200px;
+    grid-template-areas: "sideL logo sideR"
+                         "sideL navBar sideR";
+    // border-bottom: 10px solid #2A2B2A;
 }
 
 .navLink {
-    grid-column: 3 / 9;
-    grid-row: 2;
+    // grid-area: navlink;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: 1;
-    margin-top: 50px;
-    
-
+    grid-area: navBar;
+    align-items: end;
 }
 .navLink div {
-    text-align: center;
-    height: 5rem;
-    // padding-top:10px;
-    // width: 10rem;
     border: 3px solid #2A2B2A;
     border-radius: 3px 15px 0 0;
     font-family: 'Gritstone Script';
-    font-size: 50px;
-    vertical-align: middle;
+    font-size: 4rem;
+    text-align: center;
+
 }
 
 .logoCaddy{
-    grid-column: 3 / 8;
-    grid-row: 1;
-    font-size: 200px;
-    margin-top: -110px;
-    margin-left: 10rem;
+    grid-area: logo;
     text-align: center;
+    font-size: 150px;
     text-shadow: 5px 2px #A4B494;
     font-family: 'Gritstone Script';
     color: #2A2B2A;
@@ -57,9 +49,7 @@ body{
 
 // HOME PAGE
 .homeWelcome {
-    margin-top: 100px;
-    margin-left: 318px;
-    margin-right: 318px;
+
     text-align: center;
     font-family: 'Futura';
     background-color: #96A13A;
