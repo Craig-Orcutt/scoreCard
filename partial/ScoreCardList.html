@@ -32,15 +32,22 @@
 
 <div class="scoreCardList">
     <div ng-repeat="CardDisplay in AllScoreCards">
-        <button class 'deleteScoreCardBtn' ng-click="deleteScoreCard(CardDisplay.id)">
-            DELETE
-        </button>
-        <div class='scoreCardCard' ng-click='goToScoreCard(CardDisplay.id)'>
+        
+        <div class='scoreCardCard'>
+            <button class='deleteScoreCardBtn ' ng-click="deleteScoreCard(CardDisplay.id)">
+                <span class="glyphicon glyphicon-trash">Delete</span>
+            </button>
+            
             <p class="scoreCardDate">Date:  {{CardDisplay.date}}</p>
-
+            
             <p class='scoreCardCourseName'>Course:  {{CardDisplay.name}}</p>
-
-            <p class="scoreCardCourseName">Score:  {{CardDisplay.roundScore}}</p>
+            
+            <p class="scoreCardCourseScore">Score:  {{CardDisplay.roundScore}}</p>
+                <div class="scoreCard__overlay">
+                <button ng-click='goToScoreCard(CardDisplay.id)'>
+                    View
+                </button>
+            </div>
         </div>
     </div>
 </div>
