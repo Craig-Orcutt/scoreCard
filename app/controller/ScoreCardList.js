@@ -20,7 +20,7 @@ angular
                 .then((data) => {
                     $scope.ScoreCard.name = data[0].name;
                     $scope.ScoreCard.GCID = data[0].GCID;
-                    console.log('single course', data);
+                    $scope.ScoreCard.img = data[0].courseImg;
                 });
 
         };
@@ -56,6 +56,7 @@ angular
                     .then((data) => {
                         console.log('scorecards', data);
                         $scope.AllScoreCards = data;
+                        
                         // GolfCourseFactory.getCourseData()
                     });
             } else {
