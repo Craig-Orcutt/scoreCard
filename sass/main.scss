@@ -11,9 +11,8 @@ body{
 .navbarContainer {
     display: grid;
     grid-template-columns: 1fr 800px 1fr;
-    grid-template-rows: 200px 200px;
-    grid-template-areas: "sideL logo sideR"
-                         "sideL navBar sideR";
+    grid-template-areas:    "sideL logo sideR"
+                            "sideL navBar sideR";
     // border-bottom: 10px solid #2A2B2A;
 }
 
@@ -22,7 +21,7 @@ body{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-area: navBar;
-    align-items: end;
+    align-items: start;
 }
 .navLink div {
     border: 3px solid #2A2B2A;
@@ -67,13 +66,58 @@ body{
 }
 .scoreCardCard {
     display: grid;
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: 1;
+    grid-template-rows: repeat(4,1fr);
     border: 5px solid #2A2B2A;
     border-radius: 4px;
     background-color: #D0D1AC;
-    text-align: center
+    text-align: center;
+    overflow: hidden;
 }
 
+.deleteScoreCardBtn {
+    grid-row: 1;
+    align-items: end;
+    justify-items: end; 
+    background: none;
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+}
+.scoreCardDate{
+    grid-row: 2;
+}
+.scoreCardCourseName{
+    grid-row: 3;
+}
+.scoreCardCourseScore{
+    grid-row: 4
+}
+// overlay hover for view button
+.scoreCard__overlay {
+    // background: #ffc60032;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transition: 0.5s;
+    transform: translateY(100%);
+} 
+.scoreCard__overlay button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+}
+
+.scoreCardCard:hover .scoreCard__overlay {
+    transform: translateY(0);
+}
 // SCORE CARD GRID
 .scoreCardWholePage {
     display: grid;
