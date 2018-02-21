@@ -1,11 +1,5 @@
-<nav class="navbarContainer" ng-controller="NavCtrl">
-
-    
-        
+<div class="navbarContainer" ng-controller="NavCtrl">
             <p class="logoCaddy">ScoreCaddy</p>
-
-
-    
         <div class="navLink">
             <div ng-show="{{homePage.bang}}isLoggedIn" ng-click="navLink(homePage.url)"ng-class="{ active: isActive('/home')}">{{homePage.name}}</div>
             <div ng-show="{{roundPage.bang}}isLoggedIn" ng-click="navLink(roundPage.url)"ng-class="{ active: isActive('/ScoreCardList')}">{{roundPage.name}}</div>
@@ -13,4 +7,4 @@
             <div ng-show="{{logOut.bang}}isLoggedIn" ng-click="navLink(logOut.url)">{{logOut.name}}</div>
         </div>
     
-</nav>
+    </div>
