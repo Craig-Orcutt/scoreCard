@@ -77,6 +77,7 @@ body{
 
 .deleteScoreCardBtn {
     grid-row: 1;
+    // grid-column: 1 / -1;
     align-items: end;
     justify-items: end; 
     background: none;
@@ -86,16 +87,19 @@ body{
 }
 .scoreCardDate{
     grid-row: 2;
+    grid-column: 1 / -1;
 }
 .scoreCardCourseName{
     grid-row: 3;
+    grid-column: 1 / -1;
 }
 .scoreCardCourseScore{
-    grid-row: 4
+    grid-row: 4;
+    grid-column: 1 / -1;
 }
 // overlay hover for view button
 .scoreCard__overlay {
-    // background: #ffc60032;
+    background: #ffc60032;
     grid-column: 1 / -1;
     grid-row: 1 / -1;
     position: relative;
