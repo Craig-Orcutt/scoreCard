@@ -31,7 +31,7 @@
 
 
 <div class="scoreCardList">
-    <div ng-repeat="CardDisplay in AllScoreCards">
+    <div ng-repeat="CardDisplay in AllScoreCards | orderBy : 'date' ">
         
         <div class='scoreCardCard'>
             <button class='deleteScoreCardBtn ' ng-click="deleteScoreCard(CardDisplay.id)">
