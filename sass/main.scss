@@ -89,7 +89,9 @@ body{
     font-size: 1.2rem;
     overflow: hidden;
 }
-
+.courseDropDown {
+    width: 60px;
+}
 .deleteScoreCardBtn {
     grid-row: 1;
     grid-column: 2;
@@ -203,7 +205,7 @@ body{
     align-items: end;
     padding-top: 10px;
     grid-row: 1;
-    border: 3px solid #2A2B2A;
+    border: 2px solid #2A2B2A;
     color: white;
     // text-align: center;
     background: rgba(54, 106, 60, 0.8)
@@ -216,7 +218,7 @@ body{
 }
 .holeYards {
     grid-row: 2;
-    border: 1px solid blue;
+    border: 2px solid blue;
     background: rgba(0, 38, 245, 0.3);
     display: grid;
     justify-items: center;
@@ -230,7 +232,7 @@ body{
 }
 .holePar{
     grid-row: 3;
-    border: 1px solid rgb(173, 0, 0);
+    border: 2px solid rgb(173, 0, 0);
     background: rgba(255, 0, 0, 0.2);
     display: grid;
     justify-items: center;

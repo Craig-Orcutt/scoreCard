@@ -3,9 +3,6 @@
 angular
 .module('score')
 .controller('SingleStats', function($scope, ScoreCardFactory, GolfCourseFactory, $routeParams, $route){
-    console.log('heyyyy');
-
-
     $scope.StatData = [];
     $scope.LoCount = [];
 
@@ -60,10 +57,8 @@ angular
                 $scope.LoCount = _.countBy($scope.StatData);
             // set arrays for keys and values
             let ScoreKey = Object.keys($scope.LoCount);
-            console.log('keys', ScoreKey);
             let ScoreVal = Object.values($scope.LoCount);
             ScoreVal.push(0);
-            console.log('vals', ScoreVal);
             
 // setting array to x axis
             $scope.labels = ScoreKey;

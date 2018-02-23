@@ -37,7 +37,6 @@ angular
             $scope.statsPage ={
                 name: "Stats",
                 url: '#!/Stats'
-
             };
             $scope.logOut = {
                 name: "Logout",

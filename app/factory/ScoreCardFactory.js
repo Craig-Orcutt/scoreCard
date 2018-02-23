@@ -9,7 +9,6 @@ angular
                 $http
                     .post(`${FBUrl}scoreCards.json`, JSON.stringify(scoreCardObj))
                     .then(data => {
-                        console.log('new scorecard Added', data.data);
                         resolve(data.data);
                     });
             });
@@ -20,7 +19,6 @@ angular
                 $http
                     .put(`${FBUrl}scoreCards/${scoreCardID}.json`, JSON.stringify(scoreCardObj))
                     .then(data => {
-                        console.log('FACTORY Total Added to ScoreCard', data.data);
                         resolve(data.data);
                     });
             });
@@ -59,8 +57,6 @@ angular
                 $http
                     .get(`${FBUrl}scoreCards/${scoreCardID}.json`)
                     .then((data) => {
-                        // console.log('SINGLECARDFACTORY', data);
-                        
                         resolve(data);
                     })
                     .catch(err => {
@@ -74,8 +70,6 @@ angular
              Object.keys(scoreObj).forEach(key => {
                 delete scoreObj[key].$$hashKey;
             });
-                // console.log('SCOREOBJ', scoreObj);
-                
                 return $q((resolve, reject) => {
                     $http
                     // put, adds the ScoreObj to the score Obj collection that matches with the scorecardID
@@ -111,8 +105,6 @@ angular
                 $http
                     .get(`${FBUrl}scoreCards.json`)
                     .then((data) => {
-                        console.log('factory', data);
-                        
                         resolve(data);
                     })
                     .catch(err => {
@@ -120,6 +112,7 @@ angular
                     });
             });
         }
+
 
         return { addNewScoreCard, getScoreCardList, deleteScoreCard, getSingleScoreCard, saveScore, getSavedScore, addScoreTotalToCard, getAllScoreCards};
     });
