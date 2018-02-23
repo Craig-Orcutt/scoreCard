@@ -34,11 +34,11 @@ angular
             $scope.RoundScores
         ];
 // colors for graph
-$scope.colors = [{ 
-    borderColor: ['rgba(178, 103, 94, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)','rgba(204, 118, 161, 1)', 'rgba(135, 179, 141, 1)',],
-    backgroundColor: ['rgba(187, 214, 134, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)','rgba(135, 179, 141, 1)' ,'rgba(204, 118, 161, 1)',],
-    borderWidth: 4  
-}];
+            $scope.colors = [{ 
+                    borderColor:  'rgba(225, 128, 81, 0.7)',
+                    backgroundColor:'rgb(201, 81, 53)',
+                    borderWidth: 5
+                }];
 
 // options for x and y axes
 $scope.labelOptions = {

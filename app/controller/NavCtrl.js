@@ -30,6 +30,10 @@ angular
                 name: "Rounds",
                 url: "#!/ScoreCardList"
             };
+            $scope.scoreCardPage = {
+                name: "ScoreCard",
+                url: "#!/ScoreCard/:id"
+            };
             $scope.statsPage ={
                 name: "Stats",
                 url: '#!/Stats'

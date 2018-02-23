@@ -1,15 +1,13 @@
-<div class="scoreCardList">
-    <div ng-repeat="CardDisplay in AllScoreCards">
-
-        <div class='scoreCardCard' >
-            <p class="scoreCardDate">Date:{{CardDisplay.date}}</p>
-
-            <p class='scoreCardCourseName'>Course:{{CardDisplay.name}}</p>
-            <button ng-click='goToScoreCard(CardDisplay.id)'>Checkout ScoreCard</button>
-            <button ng-click='goToSingleStats(CardDisplay.id)'>Checkout Stats</button>
-        </div>
-    </div>
-</div>
-
 <button ng-click="AllStats()">All Stats </button>
 <button ng-click="UserStats()">My stats</button>
+<div class="scoreCardList">
+        <div class="singleStats">
+                <canvas id="bar" class="chart chart-bar"
+                chart-data="data" chart-labels="labels" 
+                chart-colors = "colors" chart-options="labelOptions"
+                >
+                </canvas>
+                </div>
+                
+                
+                <p class="roundAverage"> Round Average : {{average}}</p>

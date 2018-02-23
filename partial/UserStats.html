@@ -1,10 +1,15 @@
-<div class="singleStats">
-<canvas id="bar" class="chart chart-bar"
-chart-data="data" chart-labels="labels" 
-chart-colors = "colors" chart-options="labelOptions"
->
-</canvas>
-</div>
 
-
-<p class="roundAverage"> Round Average : {{average}}</p>
+<div class="scoreCardList">
+        <div ng-repeat="CardDisplay in AllScoreCards">
+    
+            <div class='scoreCardCard' >
+                <p class="scoreCardDate">Date:{{CardDisplay.date}}</p>
+    
+                <p class='scoreCardCourseName'>{{CardDisplay.name}}</p>
+                <div class='statCard__overlay'>
+                    <button ng-click='goToSingleStats(CardDisplay.id)'>View Stats</button>
+                <button ng-click='goToScoreCard(CardDisplay.id)'>View ScoreCard</button>
+                </div>
+            </div>
+        </div>
+    </div>
