@@ -74,26 +74,33 @@ angular
             ];
 // set colors of bar graph
             $scope.colors = [{ 
-                    borderColor: 'rgba(204, 118, 161, 1)',
-                    backgroundColor: 'rgba(135, 179, 141, 1)',
+                    borderColor:  'rgba(225, 128, 81, 0.7)',
+                    backgroundColor:'rgb(201, 81, 53)',
+                    borderWidth: 5
                 }];
             // $scope.chartOptions = 
 
             // options for labels on x an y axes 
             $scope.labelOptions = {
-
+                    
                     scales: { 
                         yAxes: [{
                             ticks: {
                                 fontColor: "white",
-                                fontSize : 40,
+                                fontSize : 20,
                                 stepSize: 1,
                                 beginAtZero: true
-                            }
+                            },                            
+                            gridLines:{
+					        display:false,
+				            }
                         }],
                         xAxes : [{
                             stacked: true,
                             barThickness: 75,
+                            gridLines:{
+					                    display:false,
+				                    },
                             ticks: {
                                 fontColor: 'white',
                                 fontSize: 20,
