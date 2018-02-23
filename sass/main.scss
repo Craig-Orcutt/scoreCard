@@ -1,7 +1,7 @@
 body{
     background-color: black;
     background: url(../images/topography.svg),
-    linear-gradient(20deg, #a1c89e, #636940);
+    linear-gradient(120deg, #366a3c, #636940);
     background-size: 340px, auto;
     min-height: calc(100vh - 100px);
     margin: 50px;
@@ -23,13 +23,16 @@ body{
     grid-template-columns: repeat(4,1fr);
     grid-area: navBar;
     align-items: start;
+    align-content: end;
+    // background-color:#A4B494;
 }
 .navLink div {
     border: 3px solid #2A2B2A;
     border-radius: 3px 15px 0 0;
-    font-family: 'Gritstone Script';
-    font-size: 4rem;
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
     text-align: center;
+    background-color:rgb(153, 159, 74);
 }
 
 .logoCaddy{
@@ -37,17 +40,18 @@ body{
     justify-content: center;
     align-content: center;
     grid-area: logo;
-    font-size: 200px;
+    font-size: 150px;
     text-shadow: 4px 2px #a0a85a,
                 5px 3px #2A2B2A,
                 10px 10px 10px #2A2B2A;
-    font-family: 'Gritstone Script';
+    font-family: 'Lobster', cursive;
+    // font-family: "Gritstone Script";
     color: #2A2B2A;
 
 }
 
 .active {
-    background-color: #a0a85a;
+    background: url(../images/golfball.jpg);
 }
 
 // HOME PAGE
@@ -70,7 +74,7 @@ body{
     padding: 20px; 
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-gap: 10px;
+    grid-gap: 5px;
     margin: 40px;
 }
 .scoreCardCard {
@@ -92,8 +96,8 @@ body{
     height: 2rem;
     background: none;
     border-radius: 3px 15px 0 0;
-    border: 3px solid white;
-    color: white;
+    border: 2px solid white;
+    color: whitesmoke;
     text-transform: uppercase;
 }
 .scoreCardDate{
@@ -135,9 +139,10 @@ body{
 .scoreCard__overlay button {
     background: none;
     border: 2px solid white;
+    border-radius: 3px 15px 3px 3px;
     color: white;
     text-transform: uppercase;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(54, 106, 60, 0.8);
     padding: 10px;
 }
 
@@ -145,64 +150,105 @@ body{
     transform: translateY(10%);
 }
 // SCORE CARD GRID
+.scoreCardName{
+    text-align: center;
+    font-size: 5rem;
+    grid-column: 1/-1;
+    grid-row: 1;
+}
 .scoreCardWholePage {
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 100px 1fr;
+    font-family: "Futura";
+    align-items: center;
+    justify-items: center;
 }
 .scoreCardContainer{
     grid-column: 2;
+    grid-row: 2;
     display: grid;
     grid-template-rows: repeat(4,1fr);
     border: 3px solid #2A2B2A;
     border-radius: 4px;
-    background-color: whitesmoke;
+    background: rgba(246, 244, 230, 1);
     padding: 10px;
-    margin: 100px;
+    margin: 10px;
+    font-size: 1.3rem;
+    font-family: "Futura";
 }
 
 .totalScore {
-    font-family: 'Gritstone Script';
-    font-size: 100px;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
     color: whitesmoke;  
     text-align: center;
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 3;
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid #BADA55;
+    border-radius: 15px;
+    width: 200px;
+    align-content: center;
 }
 .holeLabel{
+    padding-top: 1.2rem;
+    padding-right: 4px;
     grid-row: 1;
 }
 
 .holeNumber {
+    display: grid;
+    justify-items: center;
+    align-items: end;
+    padding-top: 10px;
     grid-row: 1;
-    border: 1px solid black;
-    text-align: center;
+    border: 3px solid #2A2B2A;
+    color: white;
+    // text-align: center;
+    background: rgba(54, 106, 60, 0.8)
 
 }
 .yardsLabel {
-    grid-row: 2
+    grid-row: 2;
+    padding-top: 1.2rem;
+    padding-right: 4px;
 }
 .holeYards {
     grid-row: 2;
     border: 1px solid blue;
-    text-align: center;
+    background: rgba(0, 38, 245, 0.3);
+    display: grid;
+    justify-items: center;
+    align-items: end;
+    padding-top: 10px;
 }
 .parLabel {
     grid-row: 3;
+    padding-top: 1.2rem;
+    padding-right: 4px;
 }
 .holePar{
     grid-row: 3;
-    border: 1px solid green;
-    text-align: center;
+    border: 1px solid rgb(173, 0, 0);
+    background: rgba(255, 0, 0, 0.2);
+    display: grid;
+    justify-items: center;
+    align-items: end;
+    padding-top: 10px;
 
 }
 .scoreLabel{
     grid-row: 4;
+    padding-top: 1.2rem;
+    padding-right: 4px;
 }
 .holeScore{
     grid-row: 4;
 }
 .scoreInput{
     width: 65px;
+    height: 65px;
 }
 // END SCORECARD GRID
 
@@ -214,7 +260,7 @@ body{
     margin-right: auto;
     margin-top: 5rem;
     padding-top: 20px;
-    width: 800px;
+    width: 590px;
     background: rgba(0, 0, 0, 0.3);
     font-family: "Futura";
     
@@ -232,4 +278,29 @@ body{
     color: white;
     text-align: center;
 }
+.statCard__overlay {
+    background: rgba(160, 168, 90, 0.9);
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transition: 0.6s;
+    // border-radius: 3px 15px 0 0;
+    transform: translateX(100%);
+} 
+.statCard__overlay button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px 15px 3px 3px;
+    padding: 10px;
+}
+.scoreCardCard:hover .statCard__overlay {
+    transform: translateX(0%);
 
+}
