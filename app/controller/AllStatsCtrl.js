@@ -9,13 +9,12 @@ angular
 
     ScoreCardFactory.getAllScoreCards()
     .then(({data})=>{
-        console.log('data', data);
-        console.log('datadddd', data.data);
+
         
         // pushing data into empty array
         $scope.RoundData = Object.entries(data);
 // TODO keeps coming back as undefined
-        console.log('Scope', $scope.RoundData);
+
         
             $scope.RoundData.forEach((element)=>{
                 $scope.RoundDates.push(element[1].date);
@@ -66,10 +65,6 @@ $scope.labelOptions = {
         }]
     }
 };
-    
-        
-
-        console.log('looo', $scope.LoRound);
         
     });
     

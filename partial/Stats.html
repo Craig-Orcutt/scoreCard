@@ -1,13 +1,10 @@
 <button ng-click="AllStats()">All Stats </button>
 <button ng-click="UserStats()">My stats</button>
 <div class="scoreCardList">
-        <div class="singleStats">
-                <canvas id="bar" class="chart chart-bar"
-                chart-data="data" chart-labels="labels" 
-                chart-colors = "colors" chart-options="labelOptions"
-                >
-                </canvas>
-                </div>
-                
-                
-                <p class="roundAverage"> Round Average : {{average}}</p>
+    <div class="singleStats">
+        <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-colors="colors" chart-options="labelOptions">
+        </canvas>
+    </div>
+
+
+    <p class="roundAverage"> Round Average : {{average}}</p>

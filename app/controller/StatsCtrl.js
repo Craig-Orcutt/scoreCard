@@ -3,9 +3,6 @@
 angular
 .module('score')
 .controller('StatsCtrl', function($scope, ScoreCardFactory, $location){
-    console.log('hey');
-
-
     $scope.AllStats =  () => {        
         $location.url(`/Stats/all`);
     };
@@ -13,7 +10,7 @@ angular
     $scope.UserStats =  () => {        
         $location.url(`/Stats/user`);
     };
-        $scope.GraphScore = [];
+    $scope.GraphScore = [];
     $scope.GraphDate = [];
     $scope.average = 0;
 
@@ -21,7 +18,6 @@ angular
         if (user) {
             ScoreCardFactory.getScoreCardList(user.uid)
                 .then((data) => {
-                    console.log('scorecards', data);
                     $scope.AllScoreCards = data;
                     // GolfCourseFactory.getCourseData()
                     $scope.AllScoreCards.forEach((element)=>{
@@ -30,20 +26,11 @@ angular
                     });
 
                     $scope.average = _.mean($scope.GraphScore).toFixed(2);
-                    console.log('average', $scope.average);
-                    
                 });
         } else {
             console.log('err');
         }
     });
-
-    
-    
-
-
-
-
 
     
     // setting array to x axis
