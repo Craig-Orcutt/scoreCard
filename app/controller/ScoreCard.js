@@ -2,7 +2,7 @@
 
 angular
     .module('score')
-    .controller('ScoreCard', function ($scope, ScoreCardFactory, GolfCourseFactory, $routeParams, $route) {
+    .controller('ScoreCard', function ($scope, ScoreCardFactory, GolfCourseFactory, $routeParams, $route, $location) {
 
         $scope.HoleInfo = {
             score : 0
@@ -16,13 +16,17 @@ angular
             uid : ''
         };
 
+// returns to score Card List
+        $scope.goToScoreList= () => {
+            $location.url(`/ScoreCardList`);
+        };
 
-    
+
     ScoreCardFactory.getSingleScoreCard($routeParams.id)
         .then((data) => {
         // checks to see if there is saved scores that match the id of the scorecard
         $scope.ScoreCard = data.data;
-        console.log('score', $scope.ScoreCard);
+
 
         ScoreCardFactory.getSavedScore($routeParams.id)
         .then((data)=>{
@@ -52,9 +56,7 @@ angular
         // holeifo adds the key of ScoreCardId as well as a $$haskey which later needs to be removed in the saved score. why?
         Object.keys($scope.HoleInfo).forEach((element) => {
             $scope.HoleInfo[element].ScoreCardID = $routeParams.id;        
-        });
-        // console.log('holeinfo', $scope.HoleInfo);
-        
+        });        
         // saves score and sets id of object to match with the id of the scorecard
         ScoreCardFactory.saveScore($scope.HoleInfo, $routeParams.id)
         .then((data) => {
@@ -92,16 +94,9 @@ angular
             //     roundScore: 0,
             //     ScoreCard : $routeParams.id
             // };
-            console.log('scoretotes',$scope.ScoreTotal.Total);
-            console.log('roundsCOrrrrrr', $scope.ScoreCard.roundScore);
-            $scope.ScoreCard.roundScore = $scope.ScoreTotal.Total; 
-            
-            console.log('roundSc', $scope.ScoreCard);
-            
+            $scope.ScoreCard.roundScore = $scope.ScoreTotal.Total;             
             ScoreCardFactory.addScoreTotalToCard($routeParams.id, $scope.ScoreCard)
             .then((data)=>{
-                console.log('SCoreCardTotal', data);
-                
             });
         });
     }; 

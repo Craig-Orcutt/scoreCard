@@ -28,8 +28,6 @@ angular
         // get course data to setup the dropdown menu and get the course IDS for each course
         GolfCourseFactory.getAllCourseData()
             .then((data) => {
-                console.log('ctrldata', data.data);
-
                 $scope.CourseList = data.data;
                 $scope.CourseDropDown.name  = data.data[0].name;
             });
@@ -38,11 +36,10 @@ angular
 
         // creates scoreCard by plugin in the object created in the form and plugging in the UID of the current user
         $scope.CreateScoreCard = () => {
-            console.log('button clicked');
+
             $scope.ScoreCard.uid = firebase.auth().currentUser.uid;
             ScoreCardFactory.addNewScoreCard($scope.ScoreCard)
                 .then((data) => {
-                    console.log('scoreCard Added in Controller', data);
                     $route.reload();
                 });
         };
@@ -54,7 +51,6 @@ angular
             if (user) {
                 ScoreCardFactory.getScoreCardList(user.uid)
                     .then((data) => {
-                        console.log('scorecards', data);
                         $scope.AllScoreCards = data;
                         
                         // GolfCourseFactory.getCourseData()

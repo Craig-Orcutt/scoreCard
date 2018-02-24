@@ -7,7 +7,6 @@ angular
         if (user) {
             ScoreCardFactory.getScoreCardList(user.uid)
                 .then((data) => {
-                    console.log('scorecards', data);
                     $scope.AllScoreCards = data;
                 });
         } else {

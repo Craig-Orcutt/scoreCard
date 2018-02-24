@@ -4,12 +4,12 @@ let isLoggedIn = (AuthFactory) => {
     new Promise((resolve, reject) => {
         AuthFactory.isLoggedIn()
         .then(bool => {
-            console.log("user???", bool);
+
             if (bool) {
-                console.log("Logged in . Go ahead");
+
                 resolve();
             } else {
-                console.log("Not Logged IN . Go away");
+
                 reject();
             }
         });
