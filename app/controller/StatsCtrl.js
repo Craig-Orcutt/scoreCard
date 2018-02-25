@@ -12,25 +12,33 @@ angular
     };
     $scope.GraphScore = [];
     $scope.GraphDate = [];
-    $scope.average = 0;
-
+    $scope.averageScore = 0;
+    $scope.courseAverage = 0;
+    
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             ScoreCardFactory.getScoreCardList(user.uid)
                 .then((data) => {
-                    $scope.AllScoreCards = data;
-                    // GolfCourseFactory.getCourseData()
+                    $scope.AllScoreCards = data;      
+                    console.log('data', $scope.AllScoreCards);
+                                  
                     $scope.AllScoreCards.forEach((element)=>{
-                            $scope.GraphDate.push(element.date);
-                            $scope.GraphScore.push(element.roundScore);
+                        $scope.GraphDate.push(element.date);
+                        $scope.GraphScore.push(element.roundScore);          
                     });
-
-                    $scope.average = _.mean($scope.GraphScore).toFixed(2);
+                    // let courseObj = [];
+                    // $scope.AllScoreCards.forEach((element)=>{
+                    //     courseObj[element.name] = element.roundScore;
+                    //     console.log('course', courseObj);
+                    //     });
+                    $scope.averageScore = _.mean($scope.GraphScore).toFixed(2);
                 });
         } else {
             console.log('err');
         }
     });
+
+
 
     
     // setting array to x axis
@@ -73,5 +81,13 @@ $scope.labelOptions = {
             }
         }]
     }
+};
+// buttons for overlay on stat cards
+$scope.goToScoreCard = (scoreCardId) => {
+    $location.url(`/ScoreCard/${scoreCardId}`);
+};
+
+$scope.goToSingleStats = (scoreCardId) => {
+    $location.url(`/Stats/${scoreCardId}`);
 };
 });

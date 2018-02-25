@@ -1,17 +1,17 @@
 <div class="scoreCardCreate form-group">
 
-    <!-- <div > -->
+
+    <p class="coursePickLabel">Select Course</p>
     <div class=" courseDropDown dropdown">
         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false" ng-if="ScoreCard">
+            aria-expanded="false">
             {{ScoreCard.name}}
         </button>
         <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" aria-placeholder="Courses">
-            <option ng-if='!ScoreCard' select disabled>Select A Course</option>
+            <option selected hidden>Select A Course</option>
             <option ng-repeat='course in CourseList' ng-click='courseSelect(course.name)'>{{course.name}}</option>
-
         </div>
-        <!-- </div> -->
+
     </div>
     <label class="dateLabel">Pick A Date</label>
     <input class='dateInput'type="text" ng-model="ScoreCard.date">

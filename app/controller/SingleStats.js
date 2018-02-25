@@ -58,7 +58,6 @@ angular
             // set arrays for keys and values
             let ScoreKey = Object.keys($scope.LoCount);
             let ScoreVal = Object.values($scope.LoCount);
-            ScoreVal.push(0);
             
 // setting array to x axis
             $scope.labels = ScoreKey;
