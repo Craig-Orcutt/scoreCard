@@ -64,11 +64,45 @@ body{
     border-radius: 5px;
     color: #CFE0C3;
 }
-
-// LIST FOR SCORECARDS
+// form for creating scorecard
 .scoreCardCreate {
     margin: 40px;
+    display: grid;
+    grid-template-columns: repeat(3,200px);
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid #BADA55;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    font-family: "Futura";
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
 }
+.coursePickLabel{
+    grid-column: 1;
+    grid-row: 1;
+}
+.dateLabel{
+    grid-column: 3;
+    grid-row: 1;
+}
+.dateInput{
+    grid-column: 3; 
+    grid-row: 2;
+}
+.selectCourseBtn{
+    grid-column: 2;
+    grid-row: 3;
+}
+.courseDropDown{
+    grid-column: 1;
+    grid-row: 2
+}
+// LIST FOR SCORECARDS
 .scoreCardList {
     // background: url(https://static1.squarespace.com/static/59deb84a37c5811562f90f11/t/59dec018197aeac813bd7845/1507770396553/mint-green-paper-texture-with-flecks.jpg?format=1500w);
     padding: 20px; 
@@ -90,7 +124,7 @@ body{
     overflow: hidden;
 }
 .courseDropDown {
-    width: 60px;
+    width: 100px;
 }
 .deleteScoreCardBtn {
     grid-row: 1;
@@ -163,8 +197,8 @@ body{
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: 100px 1fr;
     font-family: "Futura";
-    align-items: center;
-    justify-items: center;
+    padding-top: 10px;
+
 }
 .scoreCardContainer{
     grid-column: 2;
@@ -192,6 +226,7 @@ body{
     border-radius: 15px;
     width: 200px;
     align-content: center;
+    margin: auto
 }
 .holeLabel{
     padding-top: 1.2rem;
@@ -257,28 +292,17 @@ body{
 
 
     // STATS STYLING
-.singleStats {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5rem;
-    padding-top: 20px;
-    width: 590px;
-    background: rgba(0, 0, 0, 0.3);
+.statCard{ 
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 100px 100px 100px;
+    border: 5px solid #2A2B2A;
+    border-radius: 3px 15px 0 0;
+    background-color: rgba(9, 58, 62, 0.4);
+    text-align: center;
     font-family: "Futura";
-    
-}
-
-.allUserScoresAvg {
-    font-family: 'Futura';
-    font-size: 40px;
-    color: white;
-    text-align: center;
-}
-.roundAverage{
-    font-family: 'Futura';
-    font-size: 40px;
-    color: white;
-    text-align: center;
+    font-size: 1.2rem;
+    overflow: hidden;
 }
 .statCard__overlay {
     background: rgba(160, 168, 90, 0.9);
@@ -302,7 +326,69 @@ body{
     border-radius: 3px 15px 3px 3px;
     padding: 10px;
 }
-.scoreCardCard:hover .statCard__overlay {
+.statCard:hover .statCard__overlay {
     transform: translateX(0%);
+}
+.statCardList {
+padding: 20px;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-gap: 5px;
+margin: 40px;
+grid-row: 2;
+grid-column: 1/-1;
+}
+.singleStats {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    padding-top: 20px;
+    width: 590px;
+    background: rgba(0, 0, 0, 0.3);
+    font-family: "Futura";
+    
+}
+
+.userStatsBtn {
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid #BADA55;
+    border-radius: 15px;
+    width: 200px;
+}
+.allUserScoresAvg {
+    font-family: 'Futura';
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
+.roundAverage{
+    font-family: 'Futura';
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
+.statCardTotal {
+    grid-column: 1/-1;
+    grid-row: 3;
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid #BADA55;
+    border-radius: 15px;
+    color: whitesmoke;
+}
+
+.viewStatsBtn{
+    position: absolute;
+    font-size: 1.5rem;
+    font-family: "Futura";
+    background: rgba(0, 0, 0, 0.1);
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px 15px 0 0;
+    color: #fff;
+    box-shadow: 0 0 40px 40px rgba(160, 168, 90, 0.9) inset, 0 0 0 0 #BADA55;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 10px 0 #BADA55 inset, 0 0 10px 4px #BADA55;
+    }
 
 }

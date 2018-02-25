@@ -1,10 +1,27 @@
-<button ng-click="AllStats()">All Stats </button>
-<button ng-click="UserStats()">My stats</button>
-<div class="scoreCardList">
+
+<button class='userStatsBtn' ng-click="UserStats()">My stats</button>
+<div class="statCardList">
     <div class="singleStats">
         <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-colors="colors" chart-options="labelOptions">
         </canvas>
     </div>
 
 
-    <p class="roundAverage"> Round Average : {{average}}</p>
+    <p class="roundAverage"> Average Score : {{averageScore}}</p>
+
+    <div class="statCardList">
+        <div ng-repeat="CardDisplay in AllScoreCards">
+    
+            <div class='statCard' >
+                <p class="scoreCardDate">Date: {{CardDisplay.date}}</p>
+    
+                <p class='scoreCardCourseName'>{{CardDisplay.name}}</p>
+
+                <p class="statCardTotal"> Total :{{CardDisplay.roundScore}}</p>
+                <div class='statCard__overlay'>
+                    <button ng-click='goToSingleStats(CardDisplay.id)'>View Stats</button>
+                <button ng-click='goToScoreCard(CardDisplay.id)'>View ScoreCard</button>
+                </div>
+            </div>
+        </div>
+    </div>

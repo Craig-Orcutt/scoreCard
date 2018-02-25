@@ -17,8 +17,8 @@ angular
         };
 
 // returns to score Card List
-        $scope.goToScoreList= () => {
-            $location.url(`/ScoreCardList`);
+        $scope.goToStatList= () => {
+            $location.url(`/Stats`);
         };
 
 
