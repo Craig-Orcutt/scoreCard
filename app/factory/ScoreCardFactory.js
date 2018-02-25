@@ -22,13 +22,13 @@ angular
                         resolve(data.data);
                     });
             });
-        }
+        } 
 
 
-        function getScoreCardList(scoreCardID) {
+        function getScoreCardList(user) {
             return $q((resolve, reject) => {
                 $http
-                    .get(`${FBUrl}scoreCards.json?orderBy="uid"&equalTo="${scoreCardID}"`)
+                    .get(`${FBUrl}scoreCards.json?orderBy="uid"&equalTo="${user}"`)
                     .then(({ data }) => {
                         let scoreCardArr = Object.keys(data).map(cardKey => {
                             data[cardKey].id = cardKey;
