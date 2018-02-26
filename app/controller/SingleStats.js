@@ -86,14 +86,14 @@ angular
                                 beginAtZero: true
                             },                            
                             gridLines:{
-					        display:false,
+					        display:true,
 				            }
                         }],
                         xAxes : [{
                             stacked: true,
                             barThickness: 75,
                             gridLines:{
-					                    display:false,
+					                    display:true,
 				                    },
                             ticks: {
                                 fontColor: 'white',

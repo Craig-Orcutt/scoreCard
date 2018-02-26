@@ -62,22 +62,38 @@ body{
     background-color: #96A13A;
     border: 1rem solid #A4B494;
     border-radius: 5px;
+    margin: 40px;
     color: #CFE0C3;
+}
+
+.homeBtn {
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid #BADA55;
+    border-radius: 15px;
+    // width: 200px;
+    font-family: 'Futura';
+    font-size: 1.2rem;
+    
+}
+
+.homeBtn:hover {
+    box-shadow: 0 0 10px 0 #BADA55 inset, 0 0 10px 4px #96A13A;
 }
 // form for creating scorecard
 .scoreCardCreate {
     margin: 40px;
     display: grid;
-    grid-template-columns: repeat(3,200px);
+    grid-template-columns: repeat(2,1fr);
     background: rgba(0, 0, 0, 0.3);
     border: 3px solid #BADA55;
+    border-radius: 15px;
     justify-content: center;
     align-content: center;
     color: white;
     font-family: "Futura";
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     box-sizing: border-box;
-    width: 50%;
+    width: 30%;
     margin-left: auto;
     margin-right: auto;
 
@@ -86,21 +102,43 @@ body{
     grid-column: 1;
     grid-row: 1;
 }
-.dateLabel{
-    grid-column: 3;
+.courseDropDown{
+    grid-column: 2; 
     grid-row: 1;
+    width: 200px;
+    // background: #2A2B2A;
+    border-radius:10px;
+    // color: white;
+}
+.dateLabel{
+    grid-column: 1;
+    grid-row: 2;
+    margin-right: 30px;
 }
 .dateInput{
-    grid-column: 3; 
+    grid-column: 2; 
     grid-row: 2;
+    align-content: end;
+    width: 200px;
+    border-radius: 10px;
+    // background: #2A2B2A;
+
 }
+
 .selectCourseBtn{
-    grid-column: 2;
+    grid-column: 1/-1;
     grid-row: 3;
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid #BADA55;
+    border-radius: 15px;
+    color: whitesmoke;
+    font-size: 1rem;
+    padding: 10px;
+    margin: 10px;
+
 }
-.courseDropDown{
-    grid-column: 1;
-    grid-row: 2
+.selectCourseBtn:hover{
+    box-shadow: 0 0 10px 0 #2A2B2A inset, 0 0 10px 4px rgba(160, 168, 90, 0.9);
 }
 // LIST FOR SCORECARDS
 .scoreCardList {
@@ -123,9 +161,8 @@ body{
     font-size: 1.2rem;
     overflow: hidden;
 }
-.courseDropDown {
-    width: 100px;
-}
+
+
 .deleteScoreCardBtn {
     grid-row: 1;
     grid-column: 2;
@@ -301,8 +338,10 @@ body{
     background-color: rgba(9, 58, 62, 0.4);
     text-align: center;
     font-family: "Futura";
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     overflow: hidden;
+    color: whitesmoke;
+    
 }
 .statCard__overlay {
     background: rgba(160, 168, 90, 0.9);
@@ -326,6 +365,9 @@ body{
     border-radius: 3px 15px 3px 3px;
     padding: 10px;
 }
+.statCard__overlay button:hover{
+box-shadow: 0 0 10px 0 #2A2B2A inset, 0 0 10px 4px #BADA55;
+}
 .statCard:hover .statCard__overlay {
     transform: translateX(0%);
 }
@@ -333,7 +375,7 @@ body{
 padding: 20px;
 display: grid;
 grid-template-columns: repeat(4, 1fr);
-grid-gap: 5px;
+grid-gap: 10px;
 margin: 40px;
 grid-row: 2;
 grid-column: 1/-1;
@@ -343,12 +385,20 @@ grid-column: 1/-1;
     margin-right: auto;
     margin-top: 5rem;
     padding-top: 20px;
-    width: 590px;
+    width: 700px;
     background: rgba(0, 0, 0, 0.3);
     font-family: "Futura";
-    
+    grid-column: 1/-1;
 }
 
+.roundAverage{
+    font-family: 'Futura';
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    // grid-column: 1;
+    // grid-row: 1;
+}
 .userStatsBtn {
     background: rgba(0, 0, 0, 0.3);
     border: 3px solid #BADA55;
@@ -361,12 +411,6 @@ grid-column: 1/-1;
     color: white;
     text-align: center;
 }
-.roundAverage{
-    font-family: 'Futura';
-    font-size: 40px;
-    color: white;
-    text-align: center;
-}
 .statCardTotal {
     grid-column: 1/-1;
     grid-row: 3;
@@ -374,6 +418,8 @@ grid-column: 1/-1;
     border: 3px solid #BADA55;
     border-radius: 15px;
     color: whitesmoke;
+    font-size: 2rem;
+    padding: 10px;
 }
 
 .viewStatsBtn{
