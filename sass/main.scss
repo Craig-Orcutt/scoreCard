@@ -10,8 +10,8 @@ body{
 // NAVBAR
 .navbarContainer {
     display: grid;
-    grid-template-columns: 1fr 800px 1fr;
-    grid-template-rows: 200px 100px;
+    // grid-template-columns: 1fr 800px 1fr;
+    // grid-template-rows: 200px 100px;
     grid-template-areas:    "sideL logo sideR"
                             "sideL navBar sideR";
     border-bottom: 10px solid #2A2B2A;
@@ -81,7 +81,6 @@ body{
 }
 // form for creating scorecard
 .scoreCardCreate {
-    margin: 40px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     background: rgba(0, 0, 0, 0.3);
@@ -91,11 +90,12 @@ body{
     align-content: center;
     color: white;
     font-family: "Futura";
-    font-size: 1.5rem;
+    font-size: 2rem;
     box-sizing: border-box;
     width: 30%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 40px auto 0 auto;
+    padding: 10px;
+
 
 }
 .coursePickLabel{
@@ -132,9 +132,9 @@ body{
     border: 3px solid #BADA55;
     border-radius: 15px;
     color: whitesmoke;
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 10px;
-    margin: 10px;
+    margin-top: 10px;
 
 }
 .selectCourseBtn:hover{
@@ -218,7 +218,10 @@ body{
     background: rgba(54, 106, 60, 0.8);
     padding: 10px;
 }
-
+.scoreCard__overlay button:hover{
+    box-shadow: 0 0 10px 0 #2A2B2A inset, 0 0 5px  #2A2B2A;
+    transform: scale(1.05);
+}
 .scoreCardCard:hover .scoreCard__overlay {
     transform: translateY(10%);
 }
@@ -438,3 +441,102 @@ grid-column: 1/-1;
     }
 
 }
+
+@media (max-width : 720px) {
+    .scoreCardName{
+        text-align: center;
+        font-size: 1rem;
+        grid-column: 1/-1;
+        grid-row: 1;
+    }
+    .scoreCardWholePage {
+        display: grid;
+        padding-top: 10px;
+    
+    }
+    .scoreCardContainer{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        border: 3px solid #2A2B2A;
+        border-radius: 4px;
+        background: rgba(246, 244, 230, 1);
+        padding: 10px;
+        margin: 10px;
+        font-size: 1.3rem;
+        font-family: "Futura";
+    }
+    
+    .totalScore {
+        font-family: 'Lobster', cursive;
+        font-size: 40px;
+        color: whitesmoke;  
+        text-align: center;
+        grid-column: 1/-1;
+        grid-row: -1;
+        background: rgba(0, 0, 0, 0.3);
+        border: 3px solid #BADA55;
+        border-radius: 15px;
+        width: 200px;
+        align-content: center;
+        margin: auto
+    }
+    .holeLabel{
+        padding-top: 1.2rem;
+        padding-right: 4px;
+        grid-column: 1;
+    }
+    
+    .holeNumber {
+        display: grid;
+        justify-items: center;
+        align-items: end;
+        padding-top: 10px;
+        grid-column: 1;
+        border: 2px solid #2A2B2A;
+        color: white;
+        // text-align: center;
+        background: rgba(54, 106, 60, 0.8)
+    
+    }
+    .yardsLabel {
+        grid-column: 2;
+        padding-top: 1.2rem;
+        padding-right: 4px;
+    }
+    .holeYards {
+        grid-column: 2;
+        border: 2px solid blue;
+        background: rgba(0, 38, 245, 0.3);
+        display: grid;
+        justify-items: center;
+        align-items: end;
+        padding-top: 10px;
+    }
+    .parLabel {
+        grid-column: 3;
+        padding-top: 1.2rem;
+        padding-right: 4px;
+    }
+    .holePar{
+        grid-column: 3;
+        border: 2px solid rgb(173, 0, 0);
+        background: rgba(255, 0, 0, 0.2);
+        display: grid;
+        justify-items: center;
+        align-items: end;
+        padding-top: 10px;
+    
+    }
+    .scoreLabel{
+        grid-column: 4;
+        padding-top: 1.2rem;
+        padding-right: 4px;
+    }
+    .holeScore{
+        grid-column: 4;
+    }
+    .scoreInput{
+        width: 65px;
+        height: 65px;
+    }
+    }
