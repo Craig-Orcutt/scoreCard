@@ -7,9 +7,7 @@ angular
         $location.url(`/Stats/all`);
     };
 
-    $scope.UserStats =  () => {        
-        $location.url(`/Stats/user`);
-    };
+
     $scope.GraphScore = [];
     $scope.GraphDate = [];
     $scope.averageScore = 0;
@@ -70,7 +68,7 @@ $scope.labelOptions = {
         }],
         xAxes : [{
             stacked: true,
-			barThickness: 55,
+			barThickness: 45,
 				gridLines:{
 					display:true,
 				},
