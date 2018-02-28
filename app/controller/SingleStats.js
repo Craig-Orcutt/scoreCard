@@ -2,10 +2,13 @@
 
 angular
 .module('score')
-.controller('SingleStats', function($scope, ScoreCardFactory, GolfCourseFactory, $routeParams, $route){
+.controller('SingleStats', function($scope, ScoreCardFactory, GolfCourseFactory, $routeParams, $route, $location){
     $scope.StatData = [];
     $scope.LoCount = [];
 
+    $scope.UserStats =  () => {        
+        $location.url(`/Stats/`);
+    };
     // switch case to sort pars birdies bogies etc..
     function SwitchData(data) {
         data.forEach((element)=>{

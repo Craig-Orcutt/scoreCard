@@ -59,10 +59,12 @@ body{
 
     text-align: center;
     font-family: 'Futura';
+    font-size: 1.2rem;
     background-color: #96A13A;
     border: 1rem solid #A4B494;
     border-radius: 5px;
-    margin: 40px;
+    margin: 100px;
+    padding: 10px;
     color: #CFE0C3;
 }
 
@@ -72,12 +74,13 @@ body{
     border-radius: 15px;
     // width: 200px;
     font-family: 'Futura';
-    font-size: 1.2rem;
-    
+    font-size: 1.5rem;
+    color: white;
 }
 
 .homeBtn:hover {
-    box-shadow: 0 0 10px 0 #BADA55 inset, 0 0 10px 4px #96A13A;
+    box-shadow: 0 0 10px 0 #2A2B2A inset, 0 0 10px 4px #BADA55;
+    transform: scale(1.07)
 }
 // form for creating scorecard
 .scoreCardCreate {
@@ -442,101 +445,19 @@ grid-column: 1/-1;
 
 }
 
-@media (max-width : 720px) {
-    .scoreCardName{
-        text-align: center;
-        font-size: 1rem;
-        grid-column: 1/-1;
-        grid-row: 1;
+
+.userStatsBtn{
+    font-size: 1.5rem;
+    font-family: "Futura";
+    background: rgba(0, 0, 0, 0.1);
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px 15px 0 0;
+    color: #fff;
+    box-shadow: 0 0 40px 40px rgba(160, 168, 90, 0.9) inset, 0 0 0 0 #BADA55;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 10px 0 #BADA55 inset, 0 0 10px 4px #BADA55;
     }
-    .scoreCardWholePage {
-        display: grid;
-        padding-top: 10px;
-    
-    }
-    .scoreCardContainer{
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        border: 3px solid #2A2B2A;
-        border-radius: 4px;
-        background: rgba(246, 244, 230, 1);
-        padding: 10px;
-        margin: 10px;
-        font-size: 1.3rem;
-        font-family: "Futura";
-    }
-    
-    .totalScore {
-        font-family: 'Lobster', cursive;
-        font-size: 40px;
-        color: whitesmoke;  
-        text-align: center;
-        grid-column: 1/-1;
-        grid-row: -1;
-        background: rgba(0, 0, 0, 0.3);
-        border: 3px solid #BADA55;
-        border-radius: 15px;
-        width: 200px;
-        align-content: center;
-        margin: auto
-    }
-    .holeLabel{
-        padding-top: 1.2rem;
-        padding-right: 4px;
-        grid-column: 1;
-    }
-    
-    .holeNumber {
-        display: grid;
-        justify-items: center;
-        align-items: end;
-        padding-top: 10px;
-        grid-column: 1;
-        border: 2px solid #2A2B2A;
-        color: white;
-        // text-align: center;
-        background: rgba(54, 106, 60, 0.8)
-    
-    }
-    .yardsLabel {
-        grid-column: 2;
-        padding-top: 1.2rem;
-        padding-right: 4px;
-    }
-    .holeYards {
-        grid-column: 2;
-        border: 2px solid blue;
-        background: rgba(0, 38, 245, 0.3);
-        display: grid;
-        justify-items: center;
-        align-items: end;
-        padding-top: 10px;
-    }
-    .parLabel {
-        grid-column: 3;
-        padding-top: 1.2rem;
-        padding-right: 4px;
-    }
-    .holePar{
-        grid-column: 3;
-        border: 2px solid rgb(173, 0, 0);
-        background: rgba(255, 0, 0, 0.2);
-        display: grid;
-        justify-items: center;
-        align-items: end;
-        padding-top: 10px;
-    
-    }
-    .scoreLabel{
-        grid-column: 4;
-        padding-top: 1.2rem;
-        padding-right: 4px;
-    }
-    .holeScore{
-        grid-column: 4;
-    }
-    .scoreInput{
-        width: 65px;
-        height: 65px;
-    }
-    }
+
+}
