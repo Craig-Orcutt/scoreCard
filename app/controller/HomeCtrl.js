@@ -9,4 +9,4 @@ angular
             $window.location.href = '#!/ScoreCardList';
         });
     };
-});
+}); 
