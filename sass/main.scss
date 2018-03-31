@@ -547,8 +547,9 @@ body{
     grid-row: 1;
     width: 100%;
     border-radius:10px;
-
+    background: #FFFFFF;
 }
+
 .dateLabel{
     grid-column: 1;
     grid-row: 2;
@@ -565,7 +566,7 @@ body{
 .selectCourseBtn{
     grid-column: 1/-1;
     grid-row: 3;
-    background: whitesmoke;
+    background: rgba(0, 0, 0, 0.3);
     border: 3px solid #BADA55;
     border-radius: 15px;
     color: whitesmoke;
