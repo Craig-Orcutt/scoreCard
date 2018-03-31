@@ -522,8 +522,8 @@ body{
 // SCORECARD CREATION MOBILE
 
 .scoreCardCreate {
-    // display: grid;
-    // grid-template-columns: repeat(2,1fr);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     background: rgba(0, 0, 0, 0.3);
     border: 3px solid #BADA55;
     border-radius: 15px;
@@ -565,7 +565,7 @@ body{
 .selectCourseBtn{
     grid-column: 1/-1;
     grid-row: 3;
-    background: rgba(0, 0, 0, 0.3);
+    background: whitesmoke;
     border: 3px solid #BADA55;
     border-radius: 15px;
     color: whitesmoke;
