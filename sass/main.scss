@@ -522,8 +522,8 @@ body{
 // SCORECARD CREATION MOBILE
 
 .scoreCardCreate {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    // display: grid;
+    // grid-template-columns: repeat(2,1fr);
     background: rgba(0, 0, 0, 0.3);
     border: 3px solid #BADA55;
     border-radius: 15px;
@@ -581,11 +581,6 @@ body{
     grid-template-columns: repeat(1,1fr);
     grid-gap: 5px;
     margin: 10px;
-}
-
-.dropdown-menu {
-    z-index: 0;
-    position: static;
 }
 
 .scoreCardCard {
