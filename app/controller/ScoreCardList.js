@@ -14,7 +14,7 @@ angular
             name : ''
         };
 
-
+// grabs the course info needed for the dropdown menu as well as when a score card is created
         $scope.courseSelect = (course) => {
             GolfCourseFactory.getSingleCourseSelect(course)
                 .then((data) => {

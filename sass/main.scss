@@ -10,21 +10,17 @@ body{
 // NAVBAR
 .navbarContainer {
     display: grid;
-    // grid-template-columns: 1fr 800px 1fr;
-    // grid-template-rows: 200px 100px;
     grid-template-areas:    "sideL logo sideR"
                             "sideL navBar sideR";
     border-bottom: 10px solid #2A2B2A;
 }
 
 .navLink {
-    // grid-area: navlink;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-area: navBar;
     align-items: start;
     align-content: end;
-    // background-color:#A4B494;
 }
 .navLink div {
     border: 3px solid #2A2B2A;
@@ -45,7 +41,6 @@ body{
                 5px 3px #2A2B2A,
                 10px 10px 10px #2A2B2A;
     font-family: 'Lobster', cursive;
-    // font-family: "Gritstone Script";
     color: #2A2B2A;
 
 }
@@ -72,7 +67,6 @@ body{
     background: rgba(0, 0, 0, 0.3);
     border: 3px solid #BADA55;
     border-radius: 15px;
-    // width: 200px;
     font-family: 'Futura';
     font-size: 1.5rem;
     color: white;
@@ -109,9 +103,9 @@ body{
     grid-column: 2; 
     grid-row: 1;
     width: 200px;
-    // background: #2A2B2A;
+
     border-radius:10px;
-    // color: white;
+
 }
 .dateLabel{
     grid-column: 1;
@@ -124,7 +118,7 @@ body{
     align-content: end;
     width: 200px;
     border-radius: 10px;
-    // background: #2A2B2A;
+
 
 }
 
@@ -145,7 +139,6 @@ body{
 }
 // LIST FOR SCORECARDS
 .scoreCardList {
-    // background: url(https://static1.squarespace.com/static/59deb84a37c5811562f90f11/t/59dec018197aeac813bd7845/1507770396553/mint-green-paper-texture-with-flecks.jpg?format=1500w);
     padding: 20px; 
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -181,7 +174,6 @@ body{
     grid-column: 1 / -1;
 }
 .scoreCardCourseName{
-    // padding-top: 30px;
     grid-row: 1;
     grid-column: 1 / -1;
 }
@@ -285,7 +277,6 @@ body{
     grid-row: 1;
     border: 2px solid #2A2B2A;
     color: white;
-    // text-align: center;
     background: rgba(54, 106, 60, 0.8)
 
 }
@@ -359,7 +350,6 @@ body{
     justify-items: center;
     align-items: center;
     transition: 0.6s;
-    // border-radius: 3px 15px 0 0;
     transform: translateX(100%);
 } 
 .statCard__overlay button {
@@ -402,8 +392,6 @@ grid-column: 1/-1;
     font-size: 40px;
     color: white;
     text-align: center;
-    // grid-column: 1;
-    // grid-row: 1;
 }
 .userStatsBtn {
     background: rgba(0, 0, 0, 0.3);
@@ -459,5 +447,214 @@ grid-column: 1/-1;
     &:hover {
         box-shadow: 0 0 10px 0 #BADA55 inset, 0 0 10px 4px #BADA55;
     }
+
+}
+
+@media(max-width: 768px){
+// BACKGROUND IMAGE
+body{
+    background-color: black;
+    background: url(../images/topography.svg),
+    linear-gradient(120deg, #366a3c, #636940);
+    background-size: 340px, auto;
+    min-height: calc(100vh - 100px);
+    margin: 50px;
+    }
+//NAVBAR MOBILE 
+.navbarContainer {
+    margin: 0px;
+}
+
+.navLink {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: start;
+    align-content: end;
+}
+.navLink div {
+    border: 3px solid #2A2B2A;
+    border-radius: 0.2rem 1rem 0 0;
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+    text-align: center;
+    background-color:rgb(153, 159, 74);
+}
+
+.logoCaddy{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-area: logo;
+    font-size: 60px;
+    text-shadow: 4px 2px #a0a85a,
+                5px 3px #2A2B2A,
+                10px 10px 10px #2A2B2A;
+    font-family: 'Lobster', cursive;
+    color: #2A2B2A;
+
+}
+
+.active {
+    background: url(../images/golfball.jpg);
+}
+// HOME PAGE MOBILE
+.homeWelcome {
+
+    text-align: center;
+    font-family: 'Futura';
+    font-size: 1.2rem;
+    background-color: #96A13A;
+    border: 1rem solid #A4B494;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    color: #CFE0C3;
+}
+
+.homeBtn {
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid #BADA55;
+    border-radius: 15px;
+    font-family: 'Futura';
+    font-size: 3rem;
+    color: white;
+}
+// SCORECARD CREATION MOBILE
+
+.scoreCardCreate {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid #BADA55;
+    border-radius: 15px;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    font-family: "Futura";
+    font-size: 2rem;
+    box-sizing: border-box;
+    width: auto;
+    margin: auto auto 0 auto;
+    padding: 10px;
+
+}
+.coursePickLabel{
+    grid-column: 1;
+    grid-row: 1;
+}
+.courseDropDown{
+    grid-column: 2; 
+    grid-row: 1;
+    width: 100%;
+    border-radius:10px;
+
+}
+.dateLabel{
+    grid-column: 1;
+    grid-row: 2;
+    margin-right: 30px;
+}
+.dateInput{
+    grid-column: 2; 
+    grid-row: 2;
+    align-content: end;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.selectCourseBtn{
+    grid-column: 1/-1;
+    grid-row: 3;
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid #BADA55;
+    border-radius: 15px;
+    color: whitesmoke;
+    font-size: 2rem;
+    padding: 10px;
+    margin-top: 10px;
+
+}
+// SCORE CARD LIST MOBILE
+.scoreCardList {
+    padding: 20px; 
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 5px;
+    margin: 10px;
+}
+
+.dropdown-menu {
+    z-index: 0;
+    position: static;
+}
+
+.scoreCardCard {
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 150px 40px 40px 40px;
+    border: 5px solid #2A2B2A;
+    border-radius: 3px 15px 0 0;
+    background-color: rgba(9, 58, 62, 0.4);
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: "Futura";
+    font-size: 2rem;
+    color: whitesmoke;
+    overflow: hidden;
+}
+
+.deleteScoreCardBtn {
+    grid-row: 1;
+    grid-column: 2;
+    padding: 3px;
+    background: none;
+    font-size: 1rem;
+    border-radius: 3px 15px 0 0;
+    border: 2px solid white;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+.scoreCardDate{
+    grid-row: 2;
+    grid-column: 2;
+}
+.scoreCardCourseName{
+    grid-row: 1;
+    grid-column: 1 / -1;
+}
+.scoreCardCourseScore{
+    grid-row: 4;
+    grid-column: 2;
+}
+.scoreCardImg {
+    grid-row: 1;
+    grid-column: 1;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.scoreCard__overlay {
+    background: rgba(160, 168, 90, 0.9);
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transition: 0.6s;
+    border-radius: 3px 15px 0 0;
+    transform: translateY(40%);
+} 
+.scoreCard__overlay button {
+    background: none;
+    border: 2px solid white;
+    border-radius: 3px 15px 3px 3px;
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+    background: rgba(54, 106, 60, 0.8);
+    padding: 10px;
+}
 
 }

@@ -8,6 +8,7 @@
             {{ScoreCard.name}}
         </button>
         <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton" aria-placeholder="Courses">
+            <span class="caret"></span>
             <option selected hidden>Course</option>
             <option ng-repeat='course in CourseList' ng-click='courseSelect(course.name)'>{{course.name}}</option>
         </div>
