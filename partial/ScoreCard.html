@@ -20,7 +20,7 @@
         </div>
         <p class="scoreLabel">Score</p>
         <div class='holeScore'ng-repeat="hole in HoleInfo">
-            <input class="scoreInput" type="number" ng-model="hole.score" ng-blur="NewScore()" ng-focus="NewTotal()">
+            <input class="scoreInput" type="number" min="0" inputmode="numeric" pattern="[0-9]*" ng-model="hole.score" ng-blur="NewScore()" ng-focus="NewTotal()">
         </div>
 
     
