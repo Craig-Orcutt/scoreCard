@@ -547,8 +547,9 @@ body{
     grid-row: 1;
     width: 100%;
     border-radius:10px;
-
+    background: #FFFFFF;
 }
+
 .dateLabel{
     grid-column: 1;
     grid-row: 2;
@@ -581,11 +582,6 @@ body{
     grid-template-columns: repeat(1,1fr);
     grid-gap: 5px;
     margin: 10px;
-}
-
-.dropdown-menu {
-    z-index: 0;
-    position: static;
 }
 
 .scoreCardCard {
