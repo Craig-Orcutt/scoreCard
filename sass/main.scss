@@ -263,6 +263,24 @@ body{
     align-content: center;
     margin: auto
 }
+
+.holeNumContain {
+    display: grid;
+    grid-row: 1;
+}
+.holeYardContain {
+    display: grid;
+    grid-row: 2;
+
+}
+.holeParContain {
+    display: grid;
+    grid-row: 3;
+}
+.holeScoreContain {
+    display: grid;
+    grid-row: 4;
+}
 .holeLabel{
     padding-top: 1.2rem;
     padding-right: 4px;
