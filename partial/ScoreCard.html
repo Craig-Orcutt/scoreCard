@@ -1,32 +1,36 @@
 <div class="scoreCardWholePage">
     <button class='viewStatsBtn'ng-click='goToStatList()'>View Stats</button>
     <div class="scoreCardName">{{ScoreCard.name}}</div>
-<div class= 'scoreCardContainer'>
-<!-- used ng-if to filter out the null objects when all of holeinfo is generating data -->
+    <div class= 'scoreCardContainer'>
+
+        <div class="holeNumContain">
         <p class="holeLabel">Hole</p>
-        <div class='holeNumber'ng-repeat="hole in HoleInfo">
-            <p>{{hole.holeNumber}}</p>
+            <div class='holeNumber'ng-repeat="hole in HoleInfo">
+                <p>{{hole.holeNumber}}</p>
+            </div>
         </div>
 
-        <p class="yardsLabel">Yards</p>
-        <div class='holeYards'ng-repeat="hole in HoleInfo">
-            <p>{{hole.yards}}</p>
+        <div class="holeYardContain">
+            <p class="yardsLabel">Yards</p>
+            <div class='holeYards'ng-repeat="hole in HoleInfo">
+                <p>{{hole.yards}}</p>
+            </div>
         </div>
 
-
-        <p class="parLabel">Par</p>
-        <div class='holePar {{Score.par}}'ng-repeat="hole in HoleInfo">
-            <p class='{{hole.par}}'>{{hole.par}}</p>
-        </div>
-        <p class="scoreLabel">Score</p>
-        <div class='holeScore'ng-repeat="hole in HoleInfo">
-            <input class="scoreInput" type="number" ng-model="hole.score" ng-blur="NewScore()" ng-focus="NewTotal()">
+        <div class="holeParContain">
+            <p class="parLabel">Par</p>
+            <div class='holePar {{Score.par}}'ng-repeat="hole in HoleInfo">
+                <p class='{{hole.par}}'>{{hole.par}}</p>
+            </div>
         </div>
 
-    
-        <!-- <button ng-click="submitTotalScore()">Finish Round</button> -->
-        
+        <div class="holeScoreContain">
+            <p class="scoreLabel">Score</p>
+            <div class='holeScore'ng-repeat="hole in HoleInfo">
+                <input class="scoreInput" type="number" min="0" inputmode="numeric" pattern="[0-9]*" ng-model="hole.score" ng-blur="NewScore()" ng-focus="NewTotal()">
+            </div>
+        </div>
     </div>
-    <p class="totalScore"> Total :  {{ScoreTotal.Total}}</p>
+<p class="totalScore"> Total :  {{ScoreTotal.Total}}</p>
 
 </div>

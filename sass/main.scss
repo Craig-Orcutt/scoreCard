@@ -263,6 +263,24 @@ body{
     align-content: center;
     margin: auto
 }
+
+.holeNumContain {
+    display: grid;
+    grid-row: 1;
+}
+.holeYardContain {
+    display: grid;
+    grid-row: 2;
+
+}
+.holeParContain {
+    display: grid;
+    grid-row: 3;
+}
+.holeScoreContain {
+    display: grid;
+    grid-row: 4;
+}
 .holeLabel{
     padding-top: 1.2rem;
     padding-right: 4px;
@@ -651,6 +669,70 @@ body{
     text-transform: uppercase;
     background: rgba(54, 106, 60, 0.8);
     padding: 10px;
+}
+
+// SCORECARD GRID MOBILE
+.scoreCardName{
+    text-align: center;
+    font-size: 1.5rem;
+    display: grid;
+    align-content: center;
+    grid-column: 1/-1;
+}
+.scoreCardWholePage {
+    // display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 100px 1fr;
+    font-family: "Futura";
+    padding-top: 10px;
+
+}
+.scoreCardContainer{
+    grid-column: 1/-1;
+    grid-row: 2;
+    display: grid;
+    // grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    border: 3px solid #2A2B2A;
+    border-radius: 4px;
+    background: rgba(246, 244, 230, 1);
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.3rem;
+    font-family: "Futura";
+}
+
+.totalScore {
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+    color: whitesmoke;  
+    text-align: center;
+    grid-column: 2;
+    grid-row: 3;
+    background: rgba(0, 0, 0, 0.3);
+    border: 3px solid #BADA55;
+    border-radius: 15px;
+    width: 200px;
+    align-content: center;
+    margin: auto
+}
+
+.scoreInput{
+    width: 3.82rem;
+    height: 3.82rem;
+    text-align: center;
+}
+.holeNumContain {
+    grid-column: 1;
+}
+.holeYardContain {
+    grid-column: 2;
+}
+.holeParContain {
+    grid-column: 3;
+}
+.holeScoreContain {
+    grid-column: 4;
 }
 
 }
