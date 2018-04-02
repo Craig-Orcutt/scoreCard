@@ -264,21 +264,17 @@ body{
     margin: auto
 }
 
+// wrappers were neede to create alternating grid (i.e. horizontal/vertical) for use in desktop and mobile
 .holeNumContain {
-    display: grid;
     grid-row: 1;
 }
 .holeYardContain {
-    display: grid;
     grid-row: 2;
-
 }
 .holeParContain {
-    display: grid;
     grid-row: 3;
 }
 .holeScoreContain {
-    display: grid;
     grid-row: 4;
 }
 .holeLabel{
@@ -691,7 +687,6 @@ body{
     grid-column: 1/-1;
     grid-row: 2;
     display: grid;
-    // grid-template-columns: repeat(4,1fr);
     grid-template-rows: auto;
     border: 3px solid #2A2B2A;
     border-radius: 4px;
@@ -724,15 +719,19 @@ body{
 }
 .holeNumContain {
     grid-column: 1;
+    grid-row: 1
 }
 .holeYardContain {
     grid-column: 2;
+    grid-row: 1
 }
 .holeParContain {
     grid-column: 3;
+    grid-row: 1
 }
 .holeScoreContain {
     grid-column: 4;
+    grid-row: 1
 }
 
 }
