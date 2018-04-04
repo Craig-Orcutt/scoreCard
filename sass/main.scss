@@ -734,7 +734,9 @@ body{
     grid-row: 1
 }
 // STATS MOBILE
-
+.singleStats{
+    width: 100%;
+}
 .roundAverage {
     font-size: 1.5rem;
 }
@@ -760,5 +762,9 @@ body{
     grid-column: 1/ -1;
     grid-row: 2;
     
+}
+
+canvas {
+    width: 100%
 }
 }
