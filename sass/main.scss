@@ -266,16 +266,24 @@ body{
 
 // wrappers were neede to create alternating grid (i.e. horizontal/vertical) for use in desktop and mobile
 .holeNumContain {
+    display: grid;
     grid-row: 1;
+    height: auto;
 }
 .holeYardContain {
+    display: grid;
     grid-row: 2;
+    height: auto;
 }
 .holeParContain {
+    display: grid;
     grid-row: 3;
+    height: auto;
 }
 .holeScoreContain {
+    display: grid;
     grid-row: 4;
+    height: auto;
 }
 .holeLabel{
     padding-top: 1.2rem;
