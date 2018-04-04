@@ -56,25 +56,22 @@ angular
 
 // options for labels on x an y axes 
 $scope.labelOptions = {
-
+    maintainAspectRatio: false,
     scales: { 
         yAxes: [{
             ticks: {
                 fontColor: "white",
-                fontSize : 15,
                 stepSize: 10,
                 beginAtZero: true
             }
         }],
         xAxes : [{
             stacked: true,
-			barThickness: 45,
 				gridLines:{
 					display:true,
 				},
             ticks: {
                 fontColor: 'white',
-                fontSize: 20,
                 fontFamily: 'Futura'
             }
         }]

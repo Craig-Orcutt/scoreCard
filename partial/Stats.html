@@ -4,14 +4,13 @@
     <div class="singleStats">
         <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-colors="colors" chart-options="labelOptions">
         </canvas>
-        <p class="roundAverage"> Average Score : {{averageScore}}</p>
     </div>
+    <p class="roundAverage"> Average Score : {{averageScore}}</p>
 
 
 
-    <div class="statCardList">
-        <div ng-repeat="CardDisplay in AllScoreCards">
-    
+    <div ng-repeat="CardDisplay in AllScoreCards">
+        
             <div class='statCard' >
                 <p class="scoreCardDate">Date: {{CardDisplay.date}}</p>
     

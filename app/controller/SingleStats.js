@@ -45,77 +45,61 @@ angular
     }
 
     // gets scores for current scorecard
-        ScoreCardFactory.getSavedScore($routeParams.id)
-            .then((data)=>{
-                // once again filters out null data
-                let scores = [];
-                scores =  data.filter(hole =>{
-                    if(hole !== null){
-                        return hole;
-                        }
-                    });
-                new SwitchData(scores);
-
-                // using loDash to count up birdies bogies etc
-                $scope.LoCount = _.countBy($scope.StatData);
-            // set arrays for keys and values
-            let ScoreKey = Object.keys($scope.LoCount);
-            let ScoreVal = Object.values($scope.LoCount);
-            
-// setting array to x axis
-            $scope.labels = ScoreKey;
-            // $scope.series = ['Series A'];
-        //   setting array to y axis
-            $scope.data = [
-                ScoreVal
-            ];
-// set colors of bar graph
-            $scope.colors = [{ 
-                    borderColor:  'rgba(225, 128, 81, 0.7)',
-                    backgroundColor:'rgb(201, 81, 53)',
-                    borderWidth: 5
-                }];
-            // $scope.chartOptions = 
-
-            // options for labels on x an y axes 
-            $scope.labelOptions = {
-                    
-                    scales: { 
-                        yAxes: [{
-                            ticks: {
-                                fontColor: "white",
-                                fontSize : 20,
-                                stepSize: 1,
-                                beginAtZero: true
-                            },                            
-                            gridLines:{
-					        display:true,
-				            }
-                        }],
-                        xAxes : [{
-                            stacked: true,
-                            barThickness: 75,
-                            gridLines:{
-					                    display:true,
-				                    },
-                            ticks: {
-                                fontColor: 'white',
-                                fontSize: 20,
-                                fontFamily: 'Futura'
-                            }
-                        }]
+    ScoreCardFactory.getSavedScore($routeParams.id)
+        .then((data)=>{
+            // once again filters out null data
+            let scores = [];
+            scores =  data.filter(hole =>{
+                if(hole !== null){
+                    return hole;
                     }
-                };
-            
-// not sure what but im supposed to have it
-            $scope.barDatasetOverride = [
-                {
-                    label: "Bar chart",
-                    borderWidth: 1,
-                    type: 'bar'
+                });
+            new SwitchData(scores);
+
+            // using loDash to count up birdies bogies etc
+            $scope.LoCount = _.countBy($scope.StatData);
+        // set arrays for keys and values
+        let ScoreKey = Object.keys($scope.LoCount);
+        let ScoreVal = Object.values($scope.LoCount);
+        // setting array to x axis
+        $scope.labels = ScoreKey;
+        //   setting array to y axis
+        $scope.data = [
+            ScoreVal
+        ];
+        // set colors of bar graph
+        $scope.colors = [{ 
+                borderColor:  'rgba(225, 128, 81, 0.7)',
+                backgroundColor:'rgb(201, 81, 53)',
+                borderWidth: 5
+            }];
+        // options for labels on x an y axes 
+    $scope.labelOptions = {
+        maintainAspectRatio: false,
+        scales: { 
+            yAxes: [{
+                ticks: {
+                    fontColor: "white",
+                    stepSize: 1,
+                    beginAtZero: true
+                },                            
+                gridLines:{
+                display:true,
                 }
-            ];
-        });
+            }],
+            xAxes : [{
+                stacked: true,
+                gridLines:{
+                            display:true,
+                        },
+                ticks: {
+                    fontColor: 'white',
+                    fontFamily: 'Futura'
+                }
+            }]
+        }
+    };
+});
         
 
         
