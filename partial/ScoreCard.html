@@ -3,29 +3,29 @@
     <div class="scoreCardName">{{ScoreCard.name}}</div>
     <div class= 'scoreCardContainer'>
 
-        <div class="holeNumContain">
         <p class="holeLabel">Hole</p>
+            <div class="holeNumContain">
             <div class='holeNumber'ng-repeat="hole in HoleInfo">
                 <p>{{hole.holeNumber}}</p>
             </div>
         </div>
 
-        <div class="holeYardContain">
-            <p class="yardsLabel">Yards</p>
+        <p class="yardsLabel">Yards</p>
+            <div class="holeYardContain">
             <div class='holeYards'ng-repeat="hole in HoleInfo">
                 <p>{{hole.yards}}</p>
             </div>
         </div>
 
-        <div class="holeParContain">
-            <p class="parLabel">Par</p>
+        <p class="parLabel">Par</p>
+            <div class="holeParContain">
             <div class='holePar {{Score.par}}'ng-repeat="hole in HoleInfo">
                 <p class='{{hole.par}}'>{{hole.par}}</p>
             </div>
         </div>
 
-        <div class="holeScoreContain">
-            <p class="scoreLabel">Score</p>
+        <p class="scoreLabel">Score</p>
+            <div class="holeScoreContain">
             <div class='holeScore'ng-repeat="hole in HoleInfo">
                 <input class="scoreInput" type="number" min="0" inputmode="numeric" pattern="[0-9]*" ng-model="hole.score" ng-blur="NewScore()" ng-focus="NewTotal()">
             </div>

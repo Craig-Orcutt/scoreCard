@@ -271,7 +271,7 @@ body{
     height: auto;
 }
 .holeYardContain {
-    display: grid;
+    display: grid; 
     grid-row: 2;
     height: auto;
 }
@@ -299,6 +299,8 @@ body{
     grid-row: 1;
     border: 2px solid #2A2B2A;
     color: white;
+    width: 65px;
+    height: 65px;
     background: rgba(54, 106, 60, 0.8)
 
 }
@@ -313,6 +315,8 @@ body{
     background: rgba(0, 38, 245, 0.3);
     display: grid;
     justify-items: center;
+    width: 65px;
+    height: 65px;
     align-items: end;
     padding-top: 10px;
 }
@@ -329,6 +333,8 @@ body{
     justify-items: center;
     align-items: end;
     padding-top: 10px;
+    width: 65px;
+    height: 65px;
 
 }
 .scoreLabel{
@@ -342,6 +348,7 @@ body{
 .scoreInput{
     width: 65px;
     height: 65px;
+    text-align: center;
 }
 // END SCORECARD GRID
 
@@ -414,6 +421,8 @@ grid-column: 1/-1;
     font-size: 40px;
     color: white;
     text-align: center;
+    grid-column: 1/-1;
+    grid-row: 1;
 }
 .userStatsBtn {
     background: rgba(0, 0, 0, 0.3);
@@ -704,7 +713,9 @@ body{
     font-size: 1.3rem;
     font-family: "Futura";
 }
-
+.scoreCardContainer p {
+    margin-bottom: 2rem;
+}
 .totalScore {
     font-family: 'Lobster', cursive;
     font-size: 40px;
@@ -726,20 +737,52 @@ body{
     text-align: center;
 }
 .holeNumContain {
+    display: inline;
     grid-column: 1;
-    grid-row: 1
+    grid-row: 2
 }
 .holeYardContain {
+    display: inline;
     grid-column: 2;
-    grid-row: 1
+    grid-row: 2
 }
 .holeParContain {
+    display: inline;
     grid-column: 3;
-    grid-row: 1
+    grid-row: 2
 }
 .holeScoreContain {
+    display: inline;
     grid-column: 4;
-    grid-row: 1
+    grid-row: 2
+}
+.holeNumber {
+    height: 6.2rem;
+    width: 6.2rem;
+}
+.holeYards {
+    height: 6.2rem;
+    width: 6.2rem;
+}
+.holePar {
+    height: 6.2rem;
+    width: 6.2rem;
+}
+.scoreInput {
+    height: 6.2rem;
+    width: 6.2rem;
+}
+.holeLabel {
+    grid-row: 1;
+}
+.yardsLabel {
+    grid-row: 1;
+}
+.parLabel {
+    grid-row: 1;
+}
+.scoreLabel {
+    grid-row: 1;
 }
 // STATS MOBILE
 .singleStats{
@@ -775,4 +818,18 @@ body{
 canvas {
     width: 100%
 }
+
+.statCard__overlay {
+    background: rgba(160, 168, 90, 0.9);
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transition: 0.6s;
+    transform: translateX(0%);
+    margin-top: 3rem;
+} 
 }
