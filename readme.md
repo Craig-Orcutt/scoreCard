@@ -1,7 +1,7 @@
 # ScoreCaddy
 Welcome to ScoreCaddy! A web-based application designed to allow golfers to keep track of their scores and stats while they play golf at any of the Nashville Metro Golf Courses. This app really shines and is most practical on mobile devices so feel free to view it on your phone.
 
-[ScoreCaddy](https://scorecard-2a336.firebaseapp.com/#!/home)
+[ScoreCaddy Website](https://scorecard-2a336.firebaseapp.com/#!/home)
 
 Once logged in using Google Authorization, golfers can select from a drop-down menu of golf courses. Golfers can then enter a date or name for their round of golf
 
